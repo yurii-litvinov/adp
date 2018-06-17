@@ -1,0 +1,31 @@
+﻿@using Microsoft.FSharp.Core
+@using RazorLight
+@inherits TemplatePage<ADP.KnowledgeBase>
+
+@model ADP.KnowledgeBase
+
+@functions
+{
+    public string WrapFile(FSharpOption<ADP.Document> document, string kind)
+    {
+        return $"<a href='bmo/{document.Value.FileName}'>{kind}</a>";
+    }
+}
+
+<h1>Дипломы!</h1>
+@Raw("\n")
+@{ var odd = true; }
+@foreach (var diploma in Model.WorksList)
+{
+<tr class=@(odd ? $"odd" : $"even")>
+    <td>  </td>
+    <td>  </td>
+    <td>@Raw(!diploma.HasText ? "текст не представлен" : WrapFile(diploma.Text, "текст"))</td>
+    <td>@Raw(!diploma.HasSlides ? "презентация не представлена" : WrapFile(diploma.Slides, "презентация"))</td>
+    <td>@Raw(!diploma.HasAdvisorReview ? "отзыв научного руководителя не представлен" : WrapFile(diploma.AdvisorReview, "отзыв научного руководителя"))</td>
+    <td>@Raw(!diploma.HasReviewerReview ? "отзыв рецензента не представлен" : WrapFile(diploma.ReviewerReview, "отзыв рецензента"))</td>
+    <td>@Raw(!diploma.HasSources ? "код не представлен" : diploma.SourcesUrl)</td>
+</tr>
+    @Raw("\n")
+    odd = !odd;
+}
