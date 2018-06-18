@@ -10,6 +10,7 @@ module Main =
 
         knowledgeBase 
         |> FilesProcessor.fill Environment.CurrentDirectory
+        |> PdfInfoExtractor.extract
         |> HtmlGenerator.generate
         |> ignore
 

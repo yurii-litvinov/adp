@@ -20,11 +20,14 @@
     <Compile Include="DocumentNameParser.fs" />
     <Compile Include="KnowledgeBase.fs" />
     <Compile Include="FilesProcessor.fs" />
+    <Compile Include="PdfTextExtractor.fs" />
+    <Compile Include="PdfInfoExtractor.fs" />
     <Compile Include="HtmlGenerator.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="itext7" Version="7.1.2" />
     <PackageReference Include="RazorLight" Version="2.0.0-beta1" />
   </ItemGroup>
 

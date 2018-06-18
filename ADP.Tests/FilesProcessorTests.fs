@@ -11,8 +11,8 @@ let ``When ran on a test dir, shall provide expected results`` () =
     let knowledgeBase = KnowledgeBase ()
     let dir = Path.Combine(Environment.CurrentDirectory, "TestDir")
     let knowledgeBase = knowledgeBase |> FilesProcessor.fill dir
-    knowledgeBase.WorksList |> should haveCount 1
-    let diploma = Seq.head knowledgeBase.WorksList
+    knowledgeBase.AllWorks |> should haveCount 2
+    let diploma = Seq.head knowledgeBase.AllWorks
     diploma.Group |> should equal "441"
     diploma.Course |> should equal 4
     diploma.Text |> should equal None

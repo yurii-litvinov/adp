@@ -19,4 +19,4 @@ type KnowledgeBase() =
         ()
 
     /// Returns all existing Diploma records.
-    member v.WorksList = works.Values :> Diploma seq
+    member v.AllWorks = works.Values :> Diploma seq

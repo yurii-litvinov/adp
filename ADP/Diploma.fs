@@ -25,8 +25,8 @@ type Document = {
 /// </summary>
 /// <param name="shortName">Transliterated student surname, used as an Id of a work throughout the system </param>
 type Diploma(shortName: string) =
-    member val Title = "" with get, set
-    member val AuthorName = "" with get, set
+    member val Title = " " with get, set
+    member val AuthorName = " " with get, set
     member v.ShortName = shortName
     member val Group = "" with get, set
     member val Course = 0 with get, set

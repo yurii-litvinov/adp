@@ -7,6 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="TestDir\444-Tankov-report.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TestDir\441-Leonova-reviewer-review.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -16,9 +19,12 @@
     <Compile Include="KnowledgeBaseTests.fs" />
     <Compile Include="FilesProcessorTests.fs" />
     <Compile Include="DocumentNameParserTests.fs" />
+    <Compile Include="PdfInfoExtractorTests.fs" />
     <Compile Include="HtmlGeneratorTests.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
+
+  <ItemGroup />
 
   <ItemGroup>
     <PackageReference Include="FsUnit" Version="3.1.0" />
