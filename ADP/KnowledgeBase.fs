@@ -9,13 +9,14 @@ type KnowledgeBase() =
     /// Adds given document to a repository creating new Diploma record if needed, or adds a new document 
     /// to an existing one.
     member v.Add (document : Document) =
-        let handle = document.ShortName
-        let diploma = if works.ContainsKey handle then
-                          works.[handle]
-                      else
-                          Diploma(handle)
-        diploma.Add document
-        works.[handle] <- diploma
+        let authors = document.Authors
+        for author in authors do
+            let diploma = if works.ContainsKey author then
+                              works.[author]
+                          else
+                              Diploma(author)
+            diploma.Add document
+            works.[author] <- diploma
         ()
 
     /// Returns all existing Diploma records.

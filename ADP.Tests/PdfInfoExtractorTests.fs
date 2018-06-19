@@ -11,7 +11,7 @@ let ``PDF Extractor shall correctly extract title and author name of a diploma``
         FileName = "TestDir/444-Tankov-report.pdf"; 
         Group = "444"; 
         Kind = Text; 
-        ShortName = "Tankov" }
+        Authors = ["Tankov"] }
 
     knowledgeBase.Add tankovDiploma
     knowledgeBase |> PdfInfoExtractor.extract |> ignore
@@ -27,7 +27,7 @@ let ``Strange documents shall be parsed correctly`` () =
         FileName = "TestDir/441-Konovalova-report.pdf"; 
         Group = "441"; 
         Kind = Text; 
-        ShortName = "Konovalova" }
+        Authors = ["Konovalova"] }
     
     knowledgeBase.Add diploma
     knowledgeBase |> PdfInfoExtractor.extract |> ignore

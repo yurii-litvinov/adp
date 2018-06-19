@@ -16,7 +16,7 @@ type DocumentKind =
 type Document = { 
     FileName : string; 
     Group : string;
-    ShortName : string; 
+    Authors : string list; 
     Kind : DocumentKind }
 
 /// <summary>

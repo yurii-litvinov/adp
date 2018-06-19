@@ -13,10 +13,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Diploma.fs" />
+    <Content Include="CourseWork2ndCourseTemplate.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CourseWork3rdCourseTemplate.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="DiplomaTemplate.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Compile Include="Diploma.fs" />
     <Compile Include="DocumentNameParser.fs" />
     <Compile Include="KnowledgeBase.fs" />
     <Compile Include="FilesProcessor.fs" />
@@ -25,6 +31,8 @@
     <Compile Include="HtmlGenerator.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
+
+  <ItemGroup />
 
   <ItemGroup>
     <PackageReference Include="itext7" Version="7.1.2" />

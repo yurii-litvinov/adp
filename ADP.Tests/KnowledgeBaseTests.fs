@@ -11,7 +11,7 @@ let ``It shall be possible to add a document`` () =
         FileName = "444-Ololoev-report.pdf"; 
         Group = "444"; 
         Kind = Text; 
-        ShortName = "Ololoev" }
+        Authors = ["Ololoev"] }
 
 [<Test>]
 let ``It shall be possible to add multiple documents to one tracked work`` () =
@@ -21,13 +21,13 @@ let ``It shall be possible to add multiple documents to one tracked work`` () =
         FileName = "444-Ololoev-report.pdf"; 
         Group = "444"; 
         Kind = Text; 
-        ShortName = "Ololoev" }
+        Authors = ["Ololoev"] }
 
     knowledgeBase.Add { 
         FileName = "444-Ololoev-review.pdf"; 
         Group = "444"; 
         Kind = Text; 
-        ShortName = "Ololoev" }
+        Authors = ["Ololoev"] }
 
 [<Test>]
 let ``It shall be possible to add multiple documents related to different works`` () =
@@ -37,10 +37,10 @@ let ``It shall be possible to add multiple documents related to different works`
         FileName = "444-Ololoev-report.pdf"; 
         Group = "444"; 
         Kind = Text; 
-        ShortName = "Ololoev" }
+        Authors = ["Ololoev"] }
 
     knowledgeBase.Add { 
         FileName = "444-Alibabaev-review.pdf"; 
         Group = "444"; 
         Kind = Text; 
-        ShortName = "Alibabaev" }
+        Authors = ["Alibabaev"] }
