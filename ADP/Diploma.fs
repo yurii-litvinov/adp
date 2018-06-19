@@ -25,9 +25,10 @@ type Document = {
 /// </summary>
 /// <param name="shortName">Transliterated student surname, used as an Id of a work throughout the system </param>
 type Diploma(shortName: string) =
+    member v.ShortName = shortName
     member val Title = "" with get, set
     member val AuthorName = "" with get, set
-    member v.ShortName = shortName
+    member val AdvisorName = "" with get, set
     member val Group = "" with get, set
     member val Course = 0 with get, set
     member val SourcesUrl = "" with get, set
@@ -55,6 +56,9 @@ type Diploma(shortName: string) =
 
     /// Convenience method that reports if author of this work is known. To be used from .cshtml.
     member v.HasAuthorName = v.AuthorName <> ""
+
+    /// Convenience method that reports if scientific advisor of this work is known. To be used from .cshtml.
+    member v.HasAdvisorName = v.AdvisorName <> ""
 
     /// Convenience method that reports if URL of source files for this work is known. To be used from .cshtml.
     member v.HasSources = v.SourcesUrl <> ""

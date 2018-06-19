@@ -51,7 +51,7 @@ module PdfInfoExtractor =
         for regexp in regexps do
             if ``done`` then ()
             else
-                let regexMatch = regexp.Match(text)
+                let regexMatch = regexp.Match text
                 if not regexMatch.Success then
                     ()
                 else
@@ -61,6 +61,15 @@ module PdfInfoExtractor =
                     diploma.Title <- title
                     diploma.AuthorName <- name
                     ``done`` <- true
+
+        let advisorPattern = @"Научный руководитель.*\n(?<Advisor>.*)\n"
+        let advisorRegex = Regex(advisorPattern, RegexOptions.IgnoreCase)
+        let advisorMatch = advisorRegex.Match text
+        if not advisorMatch.Success then
+            ()
+        else
+            let name = advisorMatch.Groups.["Advisor"].Value
+            diploma.AdvisorName <- name
 
     let private extractForDiploma (diploma: Diploma) =
         if not diploma.HasText then
