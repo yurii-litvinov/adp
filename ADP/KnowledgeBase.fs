@@ -20,8 +20,10 @@ type KnowledgeBase() =
         ()
 
     /// Returns all existing Diploma records.
-    member v.AllWorks = works.Values :> Diploma seq
+    member v.AllWorks = (works.Values :> Diploma seq) |> Seq.sortBy (fun d -> d.AuthorName)
 
+    /// Merges data from a given record into a database, marking record as manually edited. If there was no such
+    /// record, given record is simply added to a database.
     member v.Merge (diploma: Diploma) =
         let id = diploma.ShortName
         if works.ContainsKey id then
