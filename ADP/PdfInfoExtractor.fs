@@ -13,15 +13,22 @@ module PdfInfoExtractor =
         "Информационные системы и базы данных";
         "Кафедра информатики";
         "Программная инженерия";
-        "Направление программной инженерии"
+        "Направление программной инженерии";
+
+        // Some exceptions for 2nd course, which has not profile and chair yet
+        "группа";
+        "систем";
+        "университет";
+        "университет»"
     ]
 
-    let private allowedTitleSymbols = [@"\w"; @"\s"; @"\n"; "-"; "-"; ","; @"\."; "«"; "»"]
+    let private allowedTitleSymbols = [@"\w"; @"\s"; @"\n"; "\p{P}"]
 
     let private worksKind = [
         "Выпускная";
         "Бакалаврская"
-        "Дипломная"
+        "Дипломная";
+        "Курсовая";
     ]
 
     let private buildPatterns () =
@@ -29,8 +36,13 @@ module PdfInfoExtractor =
         let titlePattern = alt allowedTitleSymbols
         let titlePattern = "(?<Title>(" + titlePattern + ")+)"
         let worksPattern = "(" + (alt worksKind) + ")"
-        programs 
-        |> List.map (fun s -> s + @"\s*\n+(?<Name>\w+\s\w+\s\w+)\s*\n+" + titlePattern + @"\n+" + worksPattern)
+        let regularPatterns = 
+            programs 
+            |> List.map (fun s -> s + @"\s*\n+(?<Name>\w+\s\w+\s\w+)\s*\n+" + titlePattern + @"\n+" + worksPattern)
+        let workKindOmittedPatterns =
+            programs 
+            |> List.map (fun s -> s + @"\s*\n+(?<Name>\w+\s\w+\s\w+)\s*\n+" + titlePattern + @"\n+" + "Научный руководитель")
+        regularPatterns @ workKindOmittedPatterns
  
     let private extractFromPdf (diploma: Diploma) (file: string) =
         let text = PdfTextExtractor.getFirstPageText file
