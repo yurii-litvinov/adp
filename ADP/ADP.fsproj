@@ -29,12 +29,12 @@
     <Compile Include="PdfTextExtractor.fs" />
     <Compile Include="PdfInfoExtractor.fs" />
     <Compile Include="HtmlGenerator.fs" />
+    <Compile Include="JsonProcessor.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
-  <ItemGroup />
-
   <ItemGroup>
+    <PackageReference Include="Chiron" Version="7.0.0-beta-180105" />
     <PackageReference Include="itext7" Version="7.1.2" />
     <PackageReference Include="RazorLight" Version="2.0.0-beta1" />
   </ItemGroup>

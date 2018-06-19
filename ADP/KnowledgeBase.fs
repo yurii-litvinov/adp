@@ -21,3 +21,16 @@ type KnowledgeBase() =
 
     /// Returns all existing Diploma records.
     member v.AllWorks = works.Values :> Diploma seq
+
+    member v.Merge (diploma: Diploma) =
+        let id = diploma.ShortName
+        if works.ContainsKey id then
+            let existingDiploma = works.[id]
+            if diploma.HasTitle then 
+                existingDiploma.Title <- diploma.Title
+            if diploma.HasAuthorName then
+                existingDiploma.AuthorName <- diploma.AuthorName
+            existingDiploma.ManuallyEdited <- true
+        else
+            diploma.ManuallyEdited <- true
+            works.Add(id, diploma)

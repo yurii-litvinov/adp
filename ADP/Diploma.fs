@@ -31,6 +31,7 @@ type Diploma(shortName: string) =
     member val Group = "" with get, set
     member val Course = 0 with get, set
     member val SourcesUrl = "" with get, set
+    member val ManuallyEdited = false with get, set
 
     member val Text: Document option = None with get, set
     member val Slides: Document option = None with get, set
