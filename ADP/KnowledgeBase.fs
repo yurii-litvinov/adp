@@ -32,6 +32,8 @@ type KnowledgeBase() =
                 existingDiploma.Title <- diploma.Title
             if diploma.HasAuthorName then
                 existingDiploma.AuthorName <- diploma.AuthorName
+            if diploma.HasAdvisorName then
+                existingDiploma.AdvisorName <- diploma.AdvisorName
             existingDiploma.ManuallyEdited <- true
         else
             diploma.ManuallyEdited <- true

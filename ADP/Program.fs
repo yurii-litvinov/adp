@@ -11,9 +11,12 @@ module Main =
         knowledgeBase 
         |> FilesProcessor.fill Environment.CurrentDirectory
         |> PdfInfoExtractor.extract
-        |> JsonProcessor.read
+        |> ManualInfoProcessor.read
+        |> AdvisorsInfoProcessor.read
+
         |> HtmlGenerator.generate
-        |> JsonProcessor.generate
+        |> ManualInfoProcessor.generate
+        |> AdvisorsInfoProcessor.generate
         |> ignore
 
         0

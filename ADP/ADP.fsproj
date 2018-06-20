@@ -29,7 +29,8 @@
     <Compile Include="PdfTextExtractor.fs" />
     <Compile Include="PdfInfoExtractor.fs" />
     <Compile Include="HtmlGenerator.fs" />
-    <Compile Include="JsonProcessor.fs" />
+    <Compile Include="ManualInfoProcessor.fs" />
+    <Compile Include="AdvisorsInfoProcessor.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 

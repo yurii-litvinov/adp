@@ -5,7 +5,7 @@
 /// filled manually).
 /// Also, this JSON takes precedence over automatic detection, so it can be used to override information 
 /// about qualification works.
-module JsonProcessor =
+module ManualInfoProcessor =
     open Chiron
     open Chiron.Inference
     open Chiron.Operators
@@ -14,35 +14,41 @@ module JsonProcessor =
     type DiplomaJson = 
         { ShortName: string
           Title: string
-          AuthorName: string }
+          AuthorName: string 
+          AdvisorName: string }
 
         static member ToJson (x: DiplomaJson) =
             Json.Encode.buildWith (fun x jObj ->
                                    jObj
-                                   |> Inference.Json.Encode.required "shortName" x.ShortName
-                                   |> Inference.Json.Encode.required "title" x.Title
-                                   |> Inference.Json.Encode.required "authorName" x.AuthorName
+                                   |> Json.Encode.required "shortName" x.ShortName
+                                   |> Json.Encode.required "title" x.Title
+                                   |> Json.Encode.required "authorName" x.AuthorName
+                                   |> Json.Encode.required "advisorName" x.AdvisorName
                                   ) x
                               
         static member FromJson (_: DiplomaJson) =
                 let inner =
-                    (fun s t a -> { ShortName = s; Title = t; AuthorName= a })
-                    <!> Inference.Json.Decode.required "shortName"
+                    (fun shortName title authorName advisorName -> 
+                        { ShortName = shortName; Title = title; AuthorName= authorName; AdvisorName = advisorName })
+                    <!> Json.Decode.required "shortName"
                     <*> Json.Decode.required "title"
                     <*> Json.Decode.required "authorName"
+                    <*> Json.Decode.required "advisorName"
                 Json.Decode.jsonObject >=> inner
 
         static member FromDiploma (diploma: Diploma) =
             { 
-                ShortName = diploma.ShortName;
-                Title = diploma.Title;
+                ShortName = diploma.ShortName
+                Title = diploma.Title
                 AuthorName = diploma.AuthorName
+                AdvisorName = diploma.AdvisorName
             }
 
         static member ToDiploma (d: DiplomaJson) =
             let newDiploma = Diploma(d.ShortName)
             newDiploma.Title <- d.Title
             newDiploma.AuthorName <- d.AuthorName
+            newDiploma.AdvisorName <- d.AdvisorName
             newDiploma
 
     let generate (knowledgeBase: KnowledgeBase) = 
