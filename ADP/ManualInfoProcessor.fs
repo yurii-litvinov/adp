@@ -12,10 +12,14 @@ module ManualInfoProcessor =
     open System.IO
 
     type DiplomaJson = 
-        { ShortName: string
+        { 
+          ShortName: string
           Title: string
           AuthorName: string 
-          AdvisorName: string }
+          AdvisorName: string
+          SourcesUrl: string 
+          CommitterName: string
+        }
 
         static member ToJson (x: DiplomaJson) =
             Json.Encode.buildWith (fun x jObj ->
@@ -24,16 +28,27 @@ module ManualInfoProcessor =
                                    |> Json.Encode.required "title" x.Title
                                    |> Json.Encode.required "authorName" x.AuthorName
                                    |> Json.Encode.required "advisorName" x.AdvisorName
+                                   |> Json.Encode.required "sourcesUrl" x.SourcesUrl
+                                   |> Json.Encode.required "committerName" x.CommitterName
                                   ) x
                               
         static member FromJson (_: DiplomaJson) =
                 let inner =
-                    (fun shortName title authorName advisorName -> 
-                        { ShortName = shortName; Title = title; AuthorName= authorName; AdvisorName = advisorName })
+                    (fun shortName title authorName advisorName sourcesUrl committerName -> 
+                        { 
+                          ShortName = shortName
+                          Title = title
+                          AuthorName= authorName 
+                          AdvisorName = advisorName 
+                          SourcesUrl = sourcesUrl
+                          CommitterName = committerName
+                        })
                     <!> Json.Decode.required "shortName"
                     <*> Json.Decode.required "title"
                     <*> Json.Decode.required "authorName"
                     <*> Json.Decode.required "advisorName"
+                    <*> Json.Decode.required "sourcesUrl"
+                    <*> Json.Decode.required "committerName"
                 Json.Decode.jsonObject >=> inner
 
         static member FromDiploma (diploma: Diploma) =
@@ -42,6 +57,8 @@ module ManualInfoProcessor =
                 Title = diploma.Title
                 AuthorName = diploma.AuthorName
                 AdvisorName = diploma.AdvisorName
+                SourcesUrl = diploma.SourcesUrl
+                CommitterName = diploma.CommitterName
             }
 
         static member ToDiploma (d: DiplomaJson) =
@@ -49,11 +66,23 @@ module ManualInfoProcessor =
             newDiploma.Title <- d.Title
             newDiploma.AuthorName <- d.AuthorName
             newDiploma.AdvisorName <- d.AdvisorName
+            newDiploma.SourcesUrl <- d.SourcesUrl
+            newDiploma.CommitterName <- d.CommitterName
             newDiploma
+
+    let private needRegenerate (diploma: Diploma) =
+        not (
+            diploma.HasTitle
+            && diploma.HasAuthorName
+            && diploma.HasAdvisorName
+            && diploma.HasSourcesUrl
+            && diploma.HasCommitterName
+            )
+        || diploma.ManuallyEdited
 
     let generate (knowledgeBase: KnowledgeBase) = 
         let toBeSerialized = knowledgeBase.AllWorks
-                             |> Seq.filter (fun d -> not d.HasTitle || d.ManuallyEdited)
+                             |> Seq.filter needRegenerate
                              |> Seq.map DiplomaJson.FromDiploma
                              |> Seq.map Json.encode
                              |> Seq.toList
@@ -69,7 +98,7 @@ module ManualInfoProcessor =
             let parsed = File.ReadAllText "works.json"
                          |> Json.parse
             match parsed with
-            | JFail _ -> failwith "Invalid JSON file"
+            | JFail reason -> failwith <| "Invalid JSON file" + reason.ToString ()
             | JPass (Array works) ->
                 works 
                 |> Seq.map Json.decode

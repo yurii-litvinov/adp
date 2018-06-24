@@ -32,6 +32,7 @@ type Diploma(shortName: string) =
     member val Group = "" with get, set
     member val Course = 0 with get, set
     member val SourcesUrl = "" with get, set
+    member val CommitterName = "" with get, set
     member val ManuallyEdited = false with get, set
 
     member val Text: Document option = None with get, set
@@ -61,7 +62,7 @@ type Diploma(shortName: string) =
     member v.HasAdvisorName = v.AdvisorName <> ""
 
     /// Convenience method that reports if URL of source files for this work is known. To be used from .cshtml.
-    member v.HasSources = v.SourcesUrl <> ""
+    member v.HasSourcesUrl = v.SourcesUrl <> ""
 
     /// Convenience method that reports if text for this work exists. To be used from .cshtml.
     member v.HasText = v.Text.IsSome
@@ -74,3 +75,7 @@ type Diploma(shortName: string) =
 
     /// Convenience method that reports if reviewer review for this work exists. To be used from .cshtml.
     member v.HasReviewerReview = v.ReviewerReview.IsSome
+
+    /// Convenience method that reports if commiter account name (for example, GitHub account) for this work is known. 
+    /// To be used from .cshtml to generate sources link info.
+    member v.HasCommitterName = v.CommitterName <> ""

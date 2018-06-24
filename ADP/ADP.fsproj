@@ -28,7 +28,6 @@
     <Compile Include="FilesProcessor.fs" />
     <Compile Include="PdfTextExtractor.fs" />
     <Compile Include="PdfInfoExtractor.fs" />
-    <Compile Include="GoogleSheetsInfoExtractor.fs" />
     <Compile Include="HtmlGenerator.fs" />
     <Compile Include="ManualInfoProcessor.fs" />
     <Compile Include="AdvisorsInfoProcessor.fs" />

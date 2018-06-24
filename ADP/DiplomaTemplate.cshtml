@@ -24,7 +24,7 @@
     <td>@Raw(!diploma.HasSlides ? "презентация не представлена" : WrapFile(diploma.Slides, "презентация"))</td>
     <td>@Raw(!diploma.HasAdvisorReview ? "отзыв научного руководителя не представлен" : WrapFile(diploma.AdvisorReview, "отзыв научного руководителя"))</td>
     <td>@Raw(!diploma.HasReviewerReview ? "отзыв рецензента не представлен" : WrapFile(diploma.ReviewerReview, "отзыв рецензента"))</td>
-    <td>@Raw(!diploma.HasSources ? "код не представлен" : diploma.SourcesUrl)</td>
+    <td>@Raw(!diploma.HasSourcesUrl ? "код не представлен" : diploma.SourcesUrl)</td>
 </tr>
     @Raw("\n")
     odd = !odd;

@@ -7,6 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="TestDir\works.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TestDir\441-Konovalova-report.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -24,10 +27,9 @@
     <Compile Include="DocumentNameParserTests.fs" />
     <Compile Include="PdfInfoExtractorTests.fs" />
     <Compile Include="HtmlGeneratorTests.fs" />
+    <Compile Include="ManualInfoProcessorTests.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
-
-  <ItemGroup />
 
   <ItemGroup>
     <PackageReference Include="FsUnit" Version="3.1.0" />
@@ -43,5 +45,9 @@
   <ItemGroup>
     <PackageReference Update="FSharp.Core" Version="4.5.0" />
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="move $(OutDir)\TestDir\works.json $(OutDir)" />
+  </Target>
 
 </Project>
