@@ -5,6 +5,8 @@ open System.Collections.Generic
 /// Repository of all information known about qualification works.
 type KnowledgeBase() = 
     let works = Dictionary<string, Diploma>()
+
+    member val FolderOnServer = "" with get, set
     
     /// Adds given document to a repository creating new Diploma record if needed, or adds a new document 
     /// to an existing one.

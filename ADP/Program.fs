@@ -8,7 +8,9 @@ module Main =
     let main argv =
         let knowledgeBase = KnowledgeBase ()
 
-        knowledgeBase 
+        knowledgeBase
+        |> ConfigProcessor.generate
+        |> ConfigProcessor.read
         |> FilesProcessor.fill Environment.CurrentDirectory
         |> PdfInfoExtractor.extract
         |> ManualInfoProcessor.read

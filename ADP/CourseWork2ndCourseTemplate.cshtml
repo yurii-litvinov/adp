@@ -8,7 +8,7 @@
 {
     public string WrapFile(FSharpOption<ADP.Document> document, string kind)
     {
-        return $"<a href='YearlyProjects/spring-2018/244/{document.Value.FileName}'>{kind}</a>";
+        return $"<a href='{Model.FolderOnServer}{document.Value.FileName}'>{kind}</a>";
     }
 }
 
@@ -16,7 +16,7 @@
 {
 <li>
     <b>@Raw(!diploma.HasAuthorName ? " " : diploma.AuthorName)</b> @Raw(!diploma.HasTitle ? " " : diploma.Title)
-    (научный руководитель: @Raw(!diploma.HasAdvisorName ? " " : diploma.AdvisorName))<br />
+    @Raw(!diploma.HasAdvisorName ? " " : $"(научный руководитель: {diploma.AdvisorName})")<br />
     @Raw(!diploma.HasText ? "отчёт не представлен" : WrapFile(diploma.Text, "Отчёт"))
     @Raw(!diploma.HasSlides ? "презентация не представлена" : WrapFile(diploma.Slides, "Презентация"))
 </li>
