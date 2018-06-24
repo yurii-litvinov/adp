@@ -30,17 +30,7 @@ type KnowledgeBase() =
         let id = diploma.ShortName
         if works.ContainsKey id then
             let existingDiploma = works.[id]
-            if diploma.HasTitle then 
-                existingDiploma.Title <- diploma.Title
-            if diploma.HasAuthorName then
-                existingDiploma.AuthorName <- diploma.AuthorName
-            if diploma.HasAdvisorName then
-                existingDiploma.AdvisorName <- diploma.AdvisorName
-            if diploma.HasSourcesUrl then
-                existingDiploma.SourcesUrl <- diploma.SourcesUrl
-            if diploma.HasCommitterName then
-                existingDiploma.CommitterName <- diploma.CommitterName
-            existingDiploma.ManuallyEdited <- true
+            existingDiploma.Merge diploma
         else
             diploma.ManuallyEdited <- true
             works.Add(id, diploma)

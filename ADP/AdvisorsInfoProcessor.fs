@@ -15,35 +15,33 @@ module AdvisorsInfoProcessor =
     let private file = "advisors.json"
 
     type AdvisorJson = 
-        { Pattern: string
+        { 
+          Pattern: string
           Name: string
-          Prefix: string }
+        }
 
         static member ToJson (x: AdvisorJson) =
             Json.Encode.buildWith (fun x jObj ->
                                    jObj
                                    |> Json.Encode.required "pattern" x.Pattern
                                    |> Json.Encode.required "name" x.Name
-                                   |> Json.Encode.required "prefix" x.Prefix
                                   ) x
                               
         static member FromJson (_: AdvisorJson) =
                 let inner =
-                    (fun pattern name prefix -> { Pattern = pattern; Name = name; Prefix = prefix })
+                    (fun pattern name -> { Pattern = pattern; Name = name })
                     <!> Json.Decode.required "pattern"
                     <*> Json.Decode.required "name"
-                    <*> Json.Decode.required "prefix"
                 Json.Decode.jsonObject >=> inner
 
         static member FromName name =
-            { Pattern = name; Name = name; Prefix = "" }
+            { Pattern = name; Name = name }
 
         static member Apply (knowledgeBase: KnowledgeBase) (record: AdvisorJson) =
-            let advisorName = record.Prefix + " " + record.Name
             let regex = Regex(record.Pattern, RegexOptions.IgnoreCase)
             let applyToDiploma (d: Diploma) =
                 if regex.IsMatch(d.AdvisorName) then
-                    d.AdvisorName <- advisorName
+                    d.AdvisorName <- record.Name
             knowledgeBase.AllWorks 
             |> Seq.iter applyToDiploma
 
