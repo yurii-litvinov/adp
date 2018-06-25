@@ -57,7 +57,7 @@ module ConfigProcessor =
             let parsed = File.ReadAllText file
                          |> Json.parse
             match parsed with
-            | JFail _ -> failwith "Invalid config JSON file"
+            | JFail reason -> failwith <| "Invalid config JSON file" + reason.ToString ()
             | JPass config ->
                 match Json.decode config with
                 | JPass config -> knowledgeBase.FolderOnServer <- config.FolderOnServer

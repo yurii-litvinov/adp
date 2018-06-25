@@ -36,6 +36,13 @@ let ``All document kinds shall be parsed`` () =
         Kind = ReviewerReview; 
         Authors = ["Ololoev"] }
 
+    DocumentNameParser.parse "444-Ololoev-review.pdf" 
+    |> should equal <| Some { 
+        FileName = "444-Ololoev-review.pdf"; 
+        Group = "444"; 
+        Kind = AdvisorReview; 
+        Authors = ["Ololoev"] }
+
 [<Test>]
 let ``Incorrect file names shall be correctly declined`` () =
     DocumentNameParser.parse "index.html" 

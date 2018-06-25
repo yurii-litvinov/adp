@@ -38,6 +38,9 @@ type Diploma(shortName: string) =
     /// Name of a scientific advisor (with degree and position).
     member val AdvisorName = "" with get, set
 
+    /// Name of a technical consultant.
+    member val ConsultantName = "" with get, set
+
     /// Number of an academic group (string because sometimes academic groups have complex numeration like "14Б07-ММ").
     member val Group = "" with get, set
 
@@ -74,6 +77,9 @@ type Diploma(shortName: string) =
 
     /// Convenience method that reports if scientific advisor of this work is known. To be used from .cshtml.
     member v.HasAdvisorName = v.AdvisorName <> ""
+
+        /// Convenience method that reports if scientific advisor of this work is known. To be used from .cshtml.
+    member v.HasConsultantName = v.ConsultantName <> ""
 
     /// Convenience method that reports if URL of source files for this work is known. To be used from .cshtml.
     member v.HasSourcesUrl = v.SourcesUrl <> ""
@@ -116,6 +122,8 @@ type Diploma(shortName: string) =
             this.AuthorName <- other.AuthorName
         if other.HasAdvisorName then
             this.AdvisorName <- other.AdvisorName
+        if other.HasConsultantName then
+            this.ConsultantName <- other.ConsultantName
         if other.Group <> "" then
             this.Group <- other.Group
         if other.Course <> 0 then

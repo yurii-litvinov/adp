@@ -13,6 +13,7 @@ let ``Information about diploma shall be extracted correctly from a test JSON do
     result.Title |> should equal "Редактор REAL.NET"
     result.AuthorName |> should equal "Зайнуллин Егор Евгеньевич"
     result.AdvisorName |> should equal "к.т.н., доц. Ю.В. Литвинов"
+    result.ConsultantName |> should be Empty
     result.SourcesUrl |> should equal "https://github.com/yurii-litvinov/REAL.NET"
     result.CommitterName |> should equal "egorzainullin"
 

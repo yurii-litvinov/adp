@@ -66,7 +66,7 @@ module AdvisorsInfoProcessor =
             let parsed = File.ReadAllText file
                          |> Json.parse
             match parsed with
-            | JFail _ -> failwith "Invalid advisors JSON file"
+            | JFail reason -> failwith <| "Invalid advisor info JSON file" + reason.ToString ()
             | JPass (Array advisors) ->
                 advisors 
                 |> Seq.map Json.decode

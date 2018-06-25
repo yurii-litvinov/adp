@@ -12,19 +12,50 @@
     }
 }
 
-<h1>Дипломы!</h1>
+<h2>Бакалавры, направление «Математическое обеспечение и администрирование информационных систем» (02.03.03)<br /></h2>
+<table class="listing">
+<thead>
+    <tr class="odd">
+        <th>Выпускник</th>
+        <th>Тема</th>
+        <th>Научный руководитель</th>
+        <th>Консультант</th>
+        <th>Текст</th>
+        <th>Презентация</th>
+        <th>Отзыв руководителя</th>
+        <th>Отзыв рецензента</th>
+        <th>Ссылка на код</th>
+    </tr>
+</thead>
+<tbody>
+
 @Raw("\n")
 @{ var odd = true; }
 @foreach (var diploma in Model.AllWorks)
 {
 <tr class=@(odd ? $"odd" : $"even")>
-    <td><b>@Raw(!diploma.HasAuthorName ? " " : diploma.AuthorName)</b></td>
+    <td>@Raw(!diploma.HasAuthorName ? " " : diploma.AuthorName)</td>
     <td>@Raw(!diploma.HasTitle ? " " : diploma.Title)</td>
-    <td>@Raw(!diploma.HasText ? "текст не представлен" : WrapFile(diploma.Text, "текст"))</td>
-    <td>@Raw(!diploma.HasSlides ? "презентация не представлена" : WrapFile(diploma.Slides, "презентация"))</td>
-    <td>@Raw(!diploma.HasAdvisorReview ? "отзыв научного руководителя не представлен" : WrapFile(diploma.AdvisorReview, "отзыв научного руководителя"))</td>
-    <td>@Raw(!diploma.HasReviewerReview ? "отзыв рецензента не представлен" : WrapFile(diploma.ReviewerReview, "отзыв рецензента"))</td>
-    <td>@Raw(!diploma.HasSourcesUrl ? "код не представлен" : diploma.SourcesUrl)</td>
+    <td>@Raw(!diploma.HasAdvisorName ? " " : diploma.AdvisorName)</td>
+    <td>@Raw(!diploma.HasConsultantName ? "—" : diploma.ConsultantName)</td>
+    <td>@Raw(!diploma.HasText ? "Текст не представлен" : WrapFile(diploma.Text, "Текст"))</td>
+    <td>@Raw(!diploma.HasSlides ? "Презентация не представлена" : WrapFile(diploma.Slides, "Презентация"))</td>
+    <td>@Raw(!diploma.HasAdvisorReview ? "Отзыв научного руководителя не представлен" : WrapFile(diploma.AdvisorReview, "Отзыв научного руководителя"))</td>
+    <td>@Raw(!diploma.HasReviewerReview ? "Отзыв рецензента не представлен" : WrapFile(diploma.ReviewerReview, "Отзыв рецензента"))</td>
+    <td>
+    @if (diploma.HasSourcesUrl) 
+    {
+        <a href="@diploma.SourcesUrl">Реализация</a>
+        if (diploma.HasCommitterName) 
+        {
+            <span>(имя аккаунта: @diploma.CommitterName)</span>
+        }
+    }
+    else
+    {
+        @Raw("—")
+    }
+    </td>
 </tr>
     @Raw("\n")
     odd = !odd;

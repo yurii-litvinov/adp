@@ -19,6 +19,7 @@ module ManualInfoProcessor =
           Title: string
           AuthorName: string 
           AdvisorName: string
+          ConsultantName: string
           SourcesUrl: string 
           CommitterName: string
         }
@@ -31,6 +32,7 @@ module ManualInfoProcessor =
                                    |> Json.Encode.required "title" x.Title
                                    |> Json.Encode.required "authorName" x.AuthorName
                                    |> Json.Encode.required "advisorName" x.AdvisorName
+                                   |> Json.Encode.required "consultantName" x.ConsultantName
                                    |> Json.Encode.required "sourcesUrl" x.SourcesUrl
                                    |> Json.Encode.required "committerName" x.CommitterName
                                   ) x
@@ -38,12 +40,13 @@ module ManualInfoProcessor =
         /// Deserializes record from JSON object.
         static member FromJson (_: DiplomaJson) =
                 let inner =
-                    (fun shortName title authorName advisorName sourcesUrl committerName -> 
+                    (fun shortName title authorName advisorName consultantName sourcesUrl committerName -> 
                         { 
                           ShortName = shortName
                           Title = title
                           AuthorName= authorName 
                           AdvisorName = advisorName 
+                          ConsultantName = consultantName 
                           SourcesUrl = sourcesUrl
                           CommitterName = committerName
                         })
@@ -51,6 +54,7 @@ module ManualInfoProcessor =
                     <*> Json.Decode.required "title"
                     <*> Json.Decode.required "authorName"
                     <*> Json.Decode.required "advisorName"
+                    <*> Json.Decode.required "consultantName"
                     <*> Json.Decode.required "sourcesUrl"
                     <*> Json.Decode.required "committerName"
                 Json.Decode.jsonObject >=> inner
@@ -62,6 +66,7 @@ module ManualInfoProcessor =
                 Title = diploma.Title
                 AuthorName = diploma.AuthorName
                 AdvisorName = diploma.AdvisorName
+                ConsultantName = diploma.ConsultantName
                 SourcesUrl = diploma.SourcesUrl
                 CommitterName = diploma.CommitterName
             }
@@ -72,6 +77,7 @@ module ManualInfoProcessor =
             newDiploma.Title <- d.Title
             newDiploma.AuthorName <- d.AuthorName
             newDiploma.AdvisorName <- d.AdvisorName
+            newDiploma.ConsultantName <- d.ConsultantName
             newDiploma.SourcesUrl <- d.SourcesUrl
             newDiploma.CommitterName <- d.CommitterName
             newDiploma
@@ -82,6 +88,7 @@ module ManualInfoProcessor =
             diploma.HasTitle
             && diploma.HasAuthorName
             && diploma.HasAdvisorName
+            && diploma.HasConsultantName
             && diploma.HasSourcesUrl
             && diploma.HasCommitterName
             )
