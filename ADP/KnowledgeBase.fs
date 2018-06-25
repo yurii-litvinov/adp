@@ -10,7 +10,7 @@ type KnowledgeBase() =
     
     /// Adds given document to a repository creating new Diploma record if needed, or adds a new document 
     /// to an existing one.
-    member v.Add (document : Document) =
+    member this.Add (document : Document) =
         let authors = document.Authors
         for author in authors do
             let diploma = if works.ContainsKey author then
@@ -22,11 +22,24 @@ type KnowledgeBase() =
         ()
 
     /// Returns all existing Diploma records.
-    member v.AllWorks = (works.Values :> Diploma seq) |> Seq.sortBy (fun d -> d.AuthorName)
+    member this.AllWorks = (works.Values :> Diploma seq) |> Seq.sortBy (fun d -> d.AuthorName)
+
+    /// Returns academic course of all the works in a base. If there are different courses, throws an exception.
+    member this.Course = 
+        works.Values
+            |> Seq.fold
+                (fun course (work: Diploma) -> 
+                    if course = 0 then
+                        work.Course
+                    elif course <> work.Course then
+                        failwith "There are works from different courses in a folder"
+                    else
+                        course)
+                0
 
     /// Merges data from a given record into a database, marking record as manually edited. If there was no such
     /// record, given record is simply added to a database.
-    member v.Merge (diploma: Diploma) =
+    member this.Merge (diploma: Diploma) =
         let id = diploma.ShortName
         if works.ContainsKey id then
             let existingDiploma = works.[id]

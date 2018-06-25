@@ -1,0 +1,154 @@
+[
+  {
+    "shortName": "Balakina",
+    "title": "Реализация межпроцессного взаимодействия на контроллере ТРИК",
+    "authorName": "Балакина Екатерина Сергеевна",
+    "advisorName": "ст. преп. Я.А. Кириленко",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Batoev",
+    "title": "Структурный анализ диаграмм и генерация кода в среде программирования роботов TRIK Studio",
+    "authorName": "Батоев Константин Аланович",
+    "advisorName": "ст. преп. Я.А. Кириленко",
+    "sourcesUrl": "https://github.com/qreal/qreal/pull/1831",
+    "committerName": "kbatoev"
+  },
+  {
+    "shortName": "Bzikadze",
+    "title": "Отличия двух помеченных направленных ацикличных графов с повторяющимися метками",
+    "authorName": "Бзикадзе Александр Важевич",
+    "advisorName": "к.т.н., доц. Ю.В. Литвинов Ю.В.",
+    "sourcesUrl": "https://github.com/alexander-bzikadze/graph_diff",
+    "committerName": ""
+  },
+  {
+    "shortName": "Vasenina",
+    "title": "Использование методов машинного обучения для предсказания сбоев в кластерах хранения данных",
+    "authorName": "Васенина Анна Игоревна",
+    "advisorName": "д.ф.- м.н., проф. А.Н. Терехов",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Derkunskiy",
+    "title": "Применение Наивного Байесовского классификатора в задаче предсказания ухода абонентов оператора сотовой связи",
+    "authorName": "Деркунский Виктор Артурович",
+    "advisorName": "д.ф.- м.н., проф. А.Н. Терехов",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Zakharov",
+    "title": "Реализация многогипотезного фильтра Калмана высокоточного позиционирования",
+    "authorName": "Захаров Глеб Игоревич",
+    "advisorName": "ст. преп. М.Н. Смирнов",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Kirillov",
+    "title": "Парсер-комбинаторы для запросов к графовым базам данных",
+    "authorName": "Кириллов Илья Олегович",
+    "advisorName": "к.ф.-м.н., доц. С.В. Григорьев",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Kravchenko",
+    "title": "Применение метода опорных векторов в задаче предсказания оттока клиентов оператора мобильной связи",
+    "authorName": "Кравченко Евгений Артурович",
+    "advisorName": "д.ф.- м.н., проф. А.Н. Терехов",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Lomakin",
+    "title": "Измерение объема глазной орбиты по снимкам КТ",
+    "authorName": "Ломакин Александр Владимирович",
+    "advisorName": "ст. преп. С.Ю. Сартасов",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Lunina",
+    "title": "Использование нейронных сетей для распознавания 16s РНК по вторичной структуре",
+    "authorName": "Лунина Полина Сергеевна",
+    "advisorName": "к.ф.-м.н., доц. С.В. Григорьев",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Mukhin",
+    "title": "Синтез структур данных",
+    "authorName": "Мухин Артем Михайлович",
+    "advisorName": "ст. преп. Я.А. Кириленко",
+    "sourcesUrl": "https://github.com/ortem/CollectionSynthesis",
+    "committerName": ""
+  },
+  {
+    "shortName": "Nagaev",
+    "title": "Классификация снимков МРТ головного мозга",
+    "authorName": "Нагаев Артур Рафкатович",
+    "advisorName": "ст. преп. С.Ю. Сартасов",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Nebogatikov",
+    "title": "Поддержка программирования симулятора AirSim в среде REAL.NET",
+    "authorName": "Небогатиков Иван Юрьевич",
+    "advisorName": "к. т. н., доцент Литвинов Ю. В.",
+    "sourcesUrl": "https://github.com/yurii-litvinov/REAL.NET",
+    "committerName": "Ivan-Nebogatikov"
+  },
+  {
+    "shortName": "Platonova",
+    "title": "Автоматическое определение физиологически особых точек костной орбиты",
+    "authorName": "Платонова Мария Викторовна",
+    "advisorName": "ст. преп. С.Ю. Сартасов",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Proshutinskiy",
+    "title": "Разработка алгоритма высокоточного спутникового позиционирования с учетом показаний одометра",
+    "authorName": "Прошутинский Алексей Владимирович",
+    "advisorName": "ст. преп. М.Н. Смирнов",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Svitkov",
+    "title": "Реализация библиотеки для потоковой записи файлов формата XLSX",
+    "authorName": "Свитков Сергей Андреевич",
+    "advisorName": "доц. , к.т.н. Литвинов Ю. В.",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Smirnov",
+    "title": "Нанесение водяных знаков на программное  обеспечение   ",
+    "authorName": "Смирнов Денис Павлович",
+    "advisorName": " ",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Susanina",
+    "title": "Распараллеливание алгоритмов синтаксического анализа, основанных на матричных операциях",
+    "authorName": "Сусанина Юлия Алексеевна",
+    "advisorName": "к.ф.-м.н., доц. С.В. Григорьев",
+    "sourcesUrl": "https://github.com/SusaninaJulia/YaccConstructor",
+    "committerName": "SusaninaJulia"
+  },
+  {
+    "shortName": "Hitruk",
+    "title": "Цветовая сегментация изображений для робофутбола",
+    "authorName": "Хитрук Дмитрий Витальевич",
+    "advisorName": "д.ф.- м.н., проф. А.Н. Терехов",
+    "sourcesUrl": "",
+    "committerName": ""
+  }
+]

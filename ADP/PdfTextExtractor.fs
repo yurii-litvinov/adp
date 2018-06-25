@@ -34,7 +34,12 @@ module PdfTextExtractor =
     /// Text extraction strategy that collects all text chunks in a page, sorts them and then merges text from chunks 
     /// that are overlapping or very near to each other (so we believe they are from the same word).
     type private MyTextExtractionStrategy() =
+        /// A list of detected chunks of text in a page.
         let mutable chunks: TextChunk list = []
+
+        /// Heuristic constant that denotes a distance between two chunks that allows to assume that there is a space
+        /// symbol between them. If two chunks are separated by lesser distance, we assume that they are parts of 
+        /// the same word.
         let spaceDistance = 1.0f
 
         let collector (text, lastChunk: TextChunk) (newChunk: TextChunk) =
@@ -50,7 +55,7 @@ module PdfTextExtractor =
                         (text + " " + newChunk.GetText(), newChunk)
 
         interface ITextExtractionStrategy with
-            member v.EventOccurred(data: Data.IEventData, ``type``: EventType): unit = 
+            member this.EventOccurred(data: Data.IEventData, ``type``: EventType): unit = 
                 match ``type`` with
                 | EventType.RENDER_TEXT -> 
                     let data = data :?> Data.TextRenderInfo
@@ -67,10 +72,10 @@ module PdfTextExtractor =
                     ()
                 | _ -> failwith "unsupported event"
 
-            member v.GetSupportedEvents(): Collections.Generic.ICollection<EventType> = 
+            member this.GetSupportedEvents(): Collections.Generic.ICollection<EventType> = 
                 Collections.Generic.List([EventType.RENDER_TEXT]) :> _
 
-            member v.GetResultantText () =
+            member this.GetResultantText () =
                 chunks <- List.rev chunks
                 chunks <- List.sortBy (fun chunk -> 
                     let startLocation = chunk.GetLocation().GetStartLocation()

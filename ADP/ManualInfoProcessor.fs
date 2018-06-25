@@ -11,6 +11,8 @@ module ManualInfoProcessor =
     open Chiron.Operators
     open System.IO
 
+    /// Helper type that allows to serialize information about diploma using Chiron JSON library. Looks ugly because
+    /// Chiron 7 alpha was used at the moment of writing this, no more adequate API was available (or known).
     type DiplomaJson = 
         { 
           ShortName: string
@@ -21,6 +23,7 @@ module ManualInfoProcessor =
           CommitterName: string
         }
 
+        /// Serializes record into JSON object.
         static member ToJson (x: DiplomaJson) =
             Json.Encode.buildWith (fun x jObj ->
                                    jObj
@@ -31,7 +34,8 @@ module ManualInfoProcessor =
                                    |> Json.Encode.required "sourcesUrl" x.SourcesUrl
                                    |> Json.Encode.required "committerName" x.CommitterName
                                   ) x
-                              
+
+        /// Deserializes record from JSON object.
         static member FromJson (_: DiplomaJson) =
                 let inner =
                     (fun shortName title authorName advisorName sourcesUrl committerName -> 
@@ -51,6 +55,7 @@ module ManualInfoProcessor =
                     <*> Json.Decode.required "committerName"
                 Json.Decode.jsonObject >=> inner
 
+        /// Creates new record from existing Diploma.
         static member FromDiploma (diploma: Diploma) =
             { 
                 ShortName = diploma.ShortName
@@ -61,6 +66,7 @@ module ManualInfoProcessor =
                 CommitterName = diploma.CommitterName
             }
 
+        /// Creates new Diploma from given record.
         static member ToDiploma (d: DiplomaJson) =
             let newDiploma = Diploma(d.ShortName)
             newDiploma.Title <- d.Title
@@ -70,6 +76,7 @@ module ManualInfoProcessor =
             newDiploma.CommitterName <- d.CommitterName
             newDiploma
 
+    /// Tells if info about given diploma needs to be generated in JSON file that allows to manually fill missing info.
     let private needRegenerate (diploma: Diploma) =
         not (
             diploma.HasTitle
@@ -80,6 +87,8 @@ module ManualInfoProcessor =
             )
         || diploma.ManuallyEdited
 
+    /// Generates JSON file with diploma entries that can be filled by hand to provide additional information about 
+    /// works, such as source code link and account name.
     let generate (knowledgeBase: KnowledgeBase) = 
         let toBeSerialized = knowledgeBase.AllWorks
                              |> Seq.filter needRegenerate
@@ -93,6 +102,7 @@ module ManualInfoProcessor =
 
         knowledgeBase
 
+    /// Reads existing JSON file with diploma entries if present.
     let read (knowledgeBase: KnowledgeBase) = 
         if File.Exists "works.json" then
             let parsed = File.ReadAllText "works.json"

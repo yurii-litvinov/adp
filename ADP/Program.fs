@@ -9,9 +9,9 @@ module Main =
         let knowledgeBase = KnowledgeBase ()
 
         knowledgeBase
-        |> ConfigProcessor.generate
         |> ConfigProcessor.read
         |> FilesProcessor.fill Environment.CurrentDirectory
+        |> ConfigProcessor.generate
         |> PdfInfoExtractor.extract
         |> ManualInfoProcessor.read
         |> AdvisorsInfoProcessor.read

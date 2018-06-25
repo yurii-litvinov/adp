@@ -6,27 +6,20 @@ module HtmlGenerator =
     open System
     open RazorLight
 
+    /// Known Razor templates for different courses.
     let private templates = 
         Map.ofList
             [2, "CourseWork2ndCourseTemplate.cshtml";
              3, "CourseWork3rdCourseTemplate.cshtml";
              4, "DiplomaTemplate.cshtml"]
 
+    /// Selects appropriate template to be used for this knowledge base. Assumes that all works in this base are
+    /// of the same academic course.
     let private selectTemplate (knowledgeBase: KnowledgeBase) =
         if Seq.isEmpty knowledgeBase.AllWorks then
             (Seq.head templates).Value
         else
-            let course = knowledgeBase.AllWorks 
-                         |> Seq.fold
-                             (fun course (work: Diploma) -> 
-                                 if course = 0 then
-                                     work.Course
-                                 elif course <> work.Course then
-                                     failwith "There are works from different courses in a folder"
-                                 else
-                                     course)
-                             0
-
+            let course = knowledgeBase.Course 
             if not <| templates.ContainsKey course then
                 failwith "No template for these works defined"
 

@@ -1,0 +1,106 @@
+[
+  {
+    "shortName": "Berezhnyh",
+    "title": "HwProj 2.0",
+    "authorName": "Бережных Алексей Владимирович",
+    "advisorName": "к.т.н., доц. Ю.В. Литвинов",
+    "sourcesUrl": "https://github.com/InteIIigeNET/HwProj-2.0",
+    "committerName": "DedSec256"
+  },
+  {
+    "shortName": "Guryev",
+    "title": "Реализация алгоритма Ray Marching",
+    "authorName": "Гурьев Василий Александрович",
+    "advisorName": "к.т.н., доц. Ю.В. Литвинов",
+    "sourcesUrl": "https://github.com/chudovas/RayMarchIDE",
+    "committerName": ""
+  },
+  {
+    "shortName": "Dobryakov",
+    "title": "Шахматный ИИ ",
+    "authorName": "Добряков Дмитрий Алексеевич",
+    "advisorName": "к.т.н., доц. Ю.В. Литвинов",
+    "sourcesUrl": "https://github.com/ddobrjakov/Chess-Engine",
+    "committerName": ""
+  },
+  {
+    "shortName": "Zainullin",
+    "title": "Редактор REAL.NET",
+    "authorName": "Зайнуллин Егор Евгеньевич",
+    "advisorName": "к.т.н., доц. Ю.В. Литвинов",
+    "sourcesUrl": "https://github.com/yurii-litvinov/REAL.NET",
+    "committerName": "egorzainullin"
+  },
+  {
+    "shortName": "Kizhnerov",
+    "title": "Сервис для сдачи и проверки домашних работ с помощью WebSharper: Client",
+    "authorName": "Кижнеров Павел Александрович",
+    "advisorName": "к.т.н., доц. Ю.В. Литвинов",
+    "sourcesUrl": "https://github.com/RexTremendaeMajestatis/HwSharper",
+    "committerName": "RexTremendaeMajestatis"
+  },
+  {
+    "shortName": "Kleshin",
+    "title": "Отслеживание решений систем дифференциальных уравнений",
+    "authorName": "Клещин Антон Сергеевич",
+    "advisorName": "к.ф.-м.н. В.А. Васильев",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Sokolvyak",
+    "title": "HwProj на WebSharper: Маршрутизация и GUI ",
+    "authorName": "Сокольвяк Сергей Дмитриевич",
+    "advisorName": "к.т.н., доц. Ю.В. Литвинов",
+    "sourcesUrl": "https://github.com/RexTremendaeMajestatis/HwSharper",
+    "committerName": "zhvkgj"
+  },
+  {
+    "shortName": "Sushentsev",
+    "title": "Разработка редактора визуальных языков в REAL.NET",
+    "authorName": "Сушенцев Денис Сергеевич",
+    "advisorName": "к.т.н., доц. Ю.В. Литвинов",
+    "sourcesUrl": "https://github.com/yurii-litvinov/REAL.NET",
+    "committerName": "Sushentsev"
+  },
+  {
+    "shortName": "Tuchina",
+    "title": "Разработка сервиса для сдачи и проверки домашних работ с помощью WebSharper: База данных",
+    "authorName": "Тучина Анастасия Игоревна",
+    "advisorName": "к.т.н., доц. Ю.В. Литвинов",
+    "sourcesUrl": "https://github.com/RexTremendaeMajestatis/HwSharper",
+    "committerName": "Anastasia Tuchina"
+  },
+  {
+    "shortName": "Faizulina",
+    "title": "HwProj 2.0",
+    "authorName": "Файзуллина Динара Руслановна",
+    "advisorName": "к.т.н., доц. Ю.В. Литвинов",
+    "sourcesUrl": "https://github.com/InteIIigeNET/HwProj-2.0",
+    "committerName": "spaceshiperr"
+  },
+  {
+    "shortName": "Fefelov",
+    "title": "Обработка потоков числовой информации и поиск предельных циклов Пуанкаре",
+    "authorName": "Фефелов Алексей Андреевич",
+    "advisorName": "ст. преп. Я.А. Кириленко",
+    "sourcesUrl": "https://github.com/fefaleksey/16th-problem",
+    "committerName": ""
+  },
+  {
+    "shortName": "Shamrai",
+    "title": "HwProj 2.0",
+    "authorName": "Шамрай Максим Борисович",
+    "advisorName": "к.т.н., доц. Ю.В. Литвинов",
+    "sourcesUrl": "https://github.com/InteIIigeNET/HwProj-2.0",
+    "committerName": "MaxVortman"
+  },
+  {
+    "shortName": "Yarkov",
+    "title": "Цифровая стабилизация видео при сложном движении с использованием МЭМС-датчиков",
+    "authorName": "Ярков Иван Сергеевич",
+    "advisorName": "ст. преп. Я.А. Кириленко",
+    "sourcesUrl": "",
+    "committerName": ""
+  }
+]

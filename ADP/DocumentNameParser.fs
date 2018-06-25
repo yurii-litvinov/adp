@@ -8,14 +8,14 @@ module DocumentNameParser =
     /// Regexp for file naming scheme in this format:
     /// <group>-<transliterated surname of a student>-<document kind>.<extension>
     /// For example, "444-Ololoev-report.pdf"
-    let pattern = @"(?<Group>\d{3})-((?<ShortName>[a-z]+)-)+(?<Kind>(slides)|(report)|(advisor-review)|(reviewer-review))"
+    let pattern = @"(?<Group>\d{3})-((?<ShortName>[a-z]+)-)+(?<Kind>(slides)|(report)|(review)|(advisor-review)|(reviewer-review))"
     let documentNameRegex = Regex(pattern, RegexOptions.IgnoreCase)
 
     /// Classifies files to document kinds.
     let private toDocumentKind = function
         | "report" -> Text
         | "slides" -> Slides
-        | "advisor-review" -> AdvisorReview
+        | "review" | "advisor-review" -> AdvisorReview
         | "reviewer-review" -> ReviewerReview
         | _ -> failwith "Incorrect document kind, regex seems to be invalid"
 

@@ -8,24 +8,45 @@
 {
     public string WrapFile(FSharpOption<ADP.Document> document, string kind)
     {
-        return $"<a href='bmo/{document.Value.FileName}'>{kind}</a>";
+        return $"<a href='{Model.FolderOnServer}/{document.Value.FileName}'>{kind}</a>";
     }
 }
 
-<h1>Дипломы!</h1>
+<h2>Бакалавры, 344 группа</h2>
+<table class="listing">
+    <thead>
+        <tr class="odd">
+            <th>Студент</th>
+            <th>Тема</th>
+            <th>Научный руководитель</th>
+            <th>Материалы</th>
+        </tr>
+    </thead>
+<tbody>
+
 @Raw("\n")
 @{ var odd = true; }
 @foreach (var diploma in Model.AllWorks)
 {
 <tr class=@(odd ? $"odd" : $"even")>
-    <td><b>@Raw(!diploma.HasAuthorName ? " " : diploma.AuthorName)</b></td>
+    <td>@Raw(!diploma.HasAuthorName ? " " : diploma.AuthorName)</td>
     <td>@Raw(!diploma.HasTitle ? " " : diploma.Title)</td>
-    <td>@Raw(!diploma.HasText ? "текст не представлен" : WrapFile(diploma.Text, "текст"))</td>
-    <td>@Raw(!diploma.HasSlides ? "презентация не представлена" : WrapFile(diploma.Slides, "презентация"))</td>
-    <td>@Raw(!diploma.HasAdvisorReview ? "отзыв научного руководителя не представлен" : WrapFile(diploma.AdvisorReview, "отзыв научного руководителя"))</td>
-    <td>@Raw(!diploma.HasReviewerReview ? "отзыв рецензента не представлен" : WrapFile(diploma.ReviewerReview, "отзыв рецензента"))</td>
-    <td>@Raw(!diploma.HasSources ? "код не представлен" : diploma.SourcesUrl)</td>
+    <td>@Raw(!diploma.HasAdvisorName ? " " : diploma.AdvisorName)</td>
+    <td>
+        @Raw(!diploma.HasText ? "текст не представлен" : WrapFile(diploma.Text, "текст"))<br />
+        @Raw(!diploma.HasSlides ? "презентация не представлена" : WrapFile(diploma.Slides, "презентация"))<br />
+        @Raw(!diploma.HasAdvisorReview ? "отзыв научного руководителя не представлен" : WrapFile(diploma.AdvisorReview, "отзыв научного руководителя"))<br />
+        @if (diploma.HasSourcesUrl) {
+            <a href="@diploma.SourcesUrl">реализация</a>
+            if (diploma.HasCommitterName) {
+                <span>(имя аккаунта: @diploma.CommitterName)</span>
+            }
+        }
+    </td>
 </tr>
     @Raw("\n")
     odd = !odd;
 }
+    
+    </tbody>
+</table>
