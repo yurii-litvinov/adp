@@ -11,6 +11,7 @@ module AdvisorsInfoProcessor =
     open Chiron.Operators
     open System.IO
     open System.Text.RegularExpressions
+    open System
 
     let private file = "advisors.json"
 
@@ -47,17 +48,10 @@ module AdvisorsInfoProcessor =
 
     let generate (knowledgeBase: KnowledgeBase) = 
         if not <| File.Exists file then
-            let toBeSerialized = knowledgeBase.AllWorks
-                                 |> Seq.filter (fun d -> d.HasAdvisorName)
-                                 |> Seq.map (fun d -> d.AdvisorName.Trim ())
-                                 |> Seq.distinct
-                                 |> Seq.map AdvisorJson.FromName
-                                 |> Seq.map Json.encode
-                                 |> Seq.toList
-
-            let result = Json.Array toBeSerialized
-            Json.formatWith JsonFormattingOptions.Pretty result
-            |> fun s -> File.WriteAllText(file, s)
+            File.Copy(
+                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "advisors.json"), 
+                Path.Combine(Environment.CurrentDirectory, "advisors.json")
+            )
 
         knowledgeBase
 

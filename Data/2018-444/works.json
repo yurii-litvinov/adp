@@ -1,0 +1,164 @@
+[
+  {
+    "shortName": "Akbarov",
+    "title": "Метод улучшения документации программного обеспечения на основе поиска нечётких повторов",
+    "authorName": "Акбаров Артур Александрович",
+    "advisorName": "д.т.н., проф. Д.В. Кознов",
+    "consultantName": "",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Babanov",
+    "title": "Многопоточное исполнение МАК-обфусцированных программ",
+    "authorName": "Бабанов Пётр Андреевич",
+    "advisorName": " ст. преп. М.В. Баклановский",
+    "consultantName": "",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Borovkov",
+    "title": "Левая рекурсия в монадических парсер-комбинаторах",
+    "authorName": "Боровков Данила Викторович",
+    "advisorName": "к.ф.-м.н., доц. Д.Ю. Булычев ",
+    "consultantName": "",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Eprev",
+    "title": "Поиск шипов по КТ снимкам глазной орбиты",
+    "authorName": "Епрев Артём Евгеньевич",
+    "advisorName": "ст. преп. С. Ю. Сартасов",
+    "consultantName": "",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Ershov",
+    "title": "Фреймворк для разработки навигационных медицинских систем",
+    "authorName": "Ершов Кирилл Максимович",
+    "advisorName": "ст. преп. М.Н. Смирнов",
+    "consultantName": "А.Г. Петров",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Ivanova",
+    "title": "Реализация построения разбиения Вороного для ОСРВ МАКC",
+    "authorName": "Иванова Марина Андреевна",
+    "advisorName": "к.т.н., доц. Ю.В. Литвинов",
+    "consultantName": "П.В. Бойко",
+    "sourcesUrl": "https://github.com/ivm23/Voronoi",
+    "committerName": ""
+  },
+  {
+    "shortName": "Karnaukhov",
+    "title": "Разработка модуля анализа текстур 3D-моделей при решении задач дерматологии",
+    "authorName": "Карнаухов Валерий Евгеньевич",
+    "advisorName": "ст. преп. М.Н. Смирнов",
+    "consultantName": "А.Г. Петров",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Kirgizov",
+    "title": "Библиотека программирования гетерогенных встраиваемых архитектур",
+    "authorName": "Киргизов Григорий Валерьевич",
+    "advisorName": "ст. преп. Я.А. Кириленко",
+    "consultantName": "",
+    "sourcesUrl": "https://github.com/gkirgizov/hetarch",
+    "committerName": ""
+  },
+  {
+    "shortName": "Konovalova",
+    "title": "Разработка эталонной коллекции для задачи поиска нечѐтких  дубликатов в документации программного обеспечения ",
+    "authorName": "Коновалова Ирина Михайловна",
+    "advisorName": "д.т.н., проф. Д.В. Кознов",
+    "consultantName": "",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Kornilova",
+    "title": "Цифровая стабилизация видеоизображения с использованием МЭМС-датчиков в режиме реального времени",
+    "authorName": "Корнилова Анастасия Валерьевна",
+    "advisorName": "ст. преп. Я.А. Кириленко",
+    "consultantName": "",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Leonova",
+    "title": "Оптимизация распределения сенсоров между источниками сигналов",
+    "authorName": "Леонова Анна Васильевна",
+    "advisorName": "д.ф.-м.н., проф. О.Н. Граничин",
+    "consultantName": "",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Lysenko",
+    "title": "Снятие образа Android с помощью агента",
+    "authorName": "Лысенко Юлия Олеговна",
+    "advisorName": "ст. преп. Ю.А. Губанов",
+    "consultantName": "",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Medvedev",
+    "title": "Восстановление данных с дисков, повреждённых современными вредоносными программами",
+    "authorName": "Медведев Андрей Александрович",
+    "advisorName": "ст. преп. Ю.А. Губанов",
+    "consultantName": "Н.В. Тимофеев",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Misonizhnik",
+    "title": "Композициональные частично определенные типы в символьном интерпретаторе для платформы .NET Framework",
+    "authorName": "Мисонижник Александр Владимирович",
+    "advisorName": "ст. преп. Я.А. Кириленко",
+    "consultantName": "Д.А. Мордвинов",
+    "sourcesUrl": "https://github.com/dvvrd/VSharp",
+    "committerName": "misonijnik"
+  },
+  {
+    "shortName": "Platonov",
+    "title": "Framework для применения дополненной реальности в медицинских процедурах",
+    "authorName": "Платонов Владислав Николаевич",
+    "advisorName": "ст. преп. М.Н. Смирнов",
+    "consultantName": "",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Tankov",
+    "title": "Основанный на данных синтез кода в IntelliJ IDEA",
+    "authorName": "Танков Владислав Дмитриевич",
+    "advisorName": "к.т.н., доцент Т.А. Брыксин",
+    "consultantName": "",
+    "sourcesUrl": "https://github.com/ml-in-programming/bayou-integration",
+    "committerName": "TanVD"
+  },
+  {
+    "shortName": "Usov",
+    "title": "Поддержка лямбда-выражений в отладчике IDE Rider",
+    "authorName": "Усов Илья Дмитриевич",
+    "advisorName": "ст. преп. Я.А. Кириленко",
+    "consultantName": "",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Chernigovskaya",
+    "title": "Реализация синхронизирующего решателя дизъюнктов Хорна",
+    "authorName": "Черниговская Лидия Александровна",
+    "advisorName": "ст. преп. Я.А. Кириленко",
+    "consultantName": "Д.А. Мордвинов",
+    "sourcesUrl": "https://github.com/LChernigovskaya/spacer/tree/lemma",
+    "committerName": ""
+  }
+]
