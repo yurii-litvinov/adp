@@ -9,7 +9,6 @@ let ``It shall be possible to add a document`` () =
     let knowledgeBase = KnowledgeBase ()
     knowledgeBase.Add { 
         FileName = "444-Ololoev-report.pdf"; 
-        Group = "444"; 
         Kind = Text; 
         Authors = ["Ololoev"] }
 
@@ -19,13 +18,11 @@ let ``It shall be possible to add multiple documents to one tracked work`` () =
 
     knowledgeBase.Add { 
         FileName = "444-Ololoev-report.pdf"; 
-        Group = "444"; 
         Kind = Text; 
         Authors = ["Ololoev"] }
 
     knowledgeBase.Add { 
         FileName = "444-Ololoev-review.pdf"; 
-        Group = "444"; 
         Kind = Text; 
         Authors = ["Ololoev"] }
 
@@ -35,13 +32,11 @@ let ``It shall be possible to add multiple documents related to different works`
 
     knowledgeBase.Add { 
         FileName = "444-Ololoev-report.pdf"; 
-        Group = "444"; 
         Kind = Text; 
         Authors = ["Ololoev"] }
 
     knowledgeBase.Add { 
         FileName = "444-Alibabaev-review.pdf"; 
-        Group = "444"; 
         Kind = Text; 
         Authors = ["Alibabaev"] }
 
@@ -50,7 +45,6 @@ let ``Manually entered information shall be merged correctly into knowledge base
     let knowledgeBase = KnowledgeBase ()
     knowledgeBase.Add { 
         FileName = "244-Zainullin-report.pdf"; 
-        Group = "244"; 
         Kind = Text; 
         Authors = ["Zainullin"] }
 

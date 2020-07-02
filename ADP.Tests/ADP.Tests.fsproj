@@ -11,10 +11,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TestDir\441-Konovalova-report.pdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="TestDir\444-Tankov-report.pdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="TestDir\441-Leonova-reviewer-review.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

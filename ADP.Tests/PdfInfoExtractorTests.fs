@@ -9,7 +9,6 @@ let ``PDF Extractor shall correctly extract title and author name of a diploma``
     let knowledgeBase = KnowledgeBase ()
     let tankovDiploma = { 
         FileName = "TestDir/444-Tankov-report.pdf"; 
-        Group = "444"; 
         Kind = Text; 
         Authors = ["Tankov"] }
 
@@ -25,7 +24,6 @@ let ``Strange documents shall be parsed correctly`` () =
     let knowledgeBase = KnowledgeBase ()
     let diploma = { 
         FileName = "TestDir/441-Konovalova-report.pdf"; 
-        Group = "441"; 
         Kind = Text; 
         Authors = ["Konovalova"] }
     

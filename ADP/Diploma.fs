@@ -1,21 +1,24 @@
 ﻿namespace ADP
 
 /// Kind of a document related to a qualification work.
-/// For second-course works only text and slides are applicable,
-/// for third course advisor review is added, and for bachelor qualification work
-/// all document kinds are applicable.
+/// For second course and third course works there is text, slides and advisor review, optionally a consultant review.
+/// Advisor and consultant review can be submitted as a single document.
+/// Qualification works also have separate reviewer reviews.
 type DocumentKind =
     | Text
     | Slides
     | AdvisorReview
+    | ConsultantReview
+    | AdvisorConsultantReview
     | ReviewerReview
 
 /// Document related to qualification work, stored as a file with special name format:
-/// <group>-<transliterated surname of a student>-<document kind>.<extension>
-/// For example, "444-Ololoev-report.pdf"
+/// <transliterated surname of a student>-<document kind>.<extension>
+/// For example, "Ololoev-report.pdf"
+/// One document can have several authors, for example, slides for team project can be named 
+/// as "Ivanov-Petrov-slides.pdf".
 type Document = { 
     FileName : string; 
-    Group : string;
     Authors : string list; 
     Kind : DocumentKind }
 
@@ -41,12 +44,6 @@ type Diploma(shortName: string) =
     /// Name of a technical consultant.
     member val ConsultantName = "" with get, set
 
-    /// Number of an academic group (string because sometimes academic groups have complex numeration like "14Б07-ММ").
-    member val Group = "" with get, set
-
-    /// Number of academic course (1-4 for bachelors, 5-6 for masters).
-    member val Course = 0 with get, set
-
     /// Link to source code of a diploma.
     member val SourcesUrl = "" with get, set
 
@@ -66,6 +63,9 @@ type Diploma(shortName: string) =
     /// Scientific advisor review, if present.
     member val AdvisorReview: Document option = None with get, set
 
+    /// Consultant review, if present.
+    member val ConsultantReview: Document option = None with get, set
+
     /// Reviewer review, if present.
     member val ReviewerReview: Document option = None with get, set
 
@@ -78,8 +78,13 @@ type Diploma(shortName: string) =
     /// Convenience method that reports if scientific advisor of this work is known. To be used from .cshtml.
     member v.HasAdvisorName = v.AdvisorName <> ""
 
-        /// Convenience method that reports if scientific advisor of this work is known. To be used from .cshtml.
-    member v.HasConsultantName = v.ConsultantName <> ""
+    /// Convenience method that reports if a consultant of this work is known.
+    member v.HasConsultantNameSet = v.ConsultantName <> ""
+
+    /// Convenience method that reports if we have an actual name of a consultant. Work may have only scientific 
+    /// advisor, then ConsultantName will be set to "none", this property will return false and HasConsultantNameSet
+    /// will return true.
+    member v.HasConsultantName = v.ConsultantName <> "" && v.ConsultantName <> "none"
 
     /// Convenience method that reports if URL of source files for this work is known. To be used from .cshtml.
     member v.HasSourcesUrl = v.SourcesUrl <> ""
@@ -93,6 +98,9 @@ type Diploma(shortName: string) =
     /// Convenience method that reports if advisor review for this work exists. To be used from .cshtml.
     member v.HasAdvisorReview = v.AdvisorReview.IsSome
 
+    /// Convenience method that reports if consultant review for this work exists. To be used from .cshtml.
+    member v.HasConsultantReview = v.ConsultantReview.IsSome
+
     /// Convenience method that reports if reviewer review for this work exists. To be used from .cshtml.
     member v.HasReviewerReview = v.ReviewerReview.IsSome
 
@@ -102,14 +110,14 @@ type Diploma(shortName: string) =
 
     /// Adds a new document to the diploma entry, updates metainformation if needed.
     member this.Add (document: Document) =
-        if this.Group = "" then
-            this.Group <- document.Group
-            this.Course <- int (this.Group.Substring(0, 1))
-
         match document.Kind with
         | Text -> this.Text <- Some document
         | Slides -> this.Slides <- Some document
         | AdvisorReview -> this.AdvisorReview <- Some document
+        | ConsultantReview -> this.ConsultantReview <- Some document
+        | AdvisorConsultantReview -> 
+            this.AdvisorReview <- Some document
+            this.ConsultantReview <- Some document
         | ReviewerReview -> this.ReviewerReview <- Some document
 
     /// Merges metainformation from other diploma to this one, marking this as manually edited.
@@ -122,12 +130,8 @@ type Diploma(shortName: string) =
             this.AuthorName <- other.AuthorName
         if other.HasAdvisorName then
             this.AdvisorName <- other.AdvisorName
-        if other.HasConsultantName then
+        if other.HasConsultantNameSet then
             this.ConsultantName <- other.ConsultantName
-        if other.Group <> "" then
-            this.Group <- other.Group
-        if other.Course <> 0 then
-            this.Course <- other.Course
         if other.HasSourcesUrl then
             this.SourcesUrl <- other.SourcesUrl
         if other.HasCommitterName then

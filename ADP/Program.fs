@@ -19,6 +19,7 @@ module Main =
         |> HtmlGenerator.generate
         |> ManualInfoProcessor.generate
         |> AdvisorsInfoProcessor.generate
+        |> DiagnosticsPrinter.print
         |> ignore
 
         0

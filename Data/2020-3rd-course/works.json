@@ -1,0 +1,200 @@
+[
+  {
+    "shortName": "Eliseeva",
+    "title": "Исправление искажений в портретных снимках на широкоугольную камеру",
+    "authorName": "Александра Михайловна Елисеева",
+    "advisorName": "ст. преп. А.А. Пименов",
+    "consultantName": "none",
+    "sourcesUrl": "https://github.com/saridormi/face_undistortion",
+    "committerName": ""
+  },
+  {
+    "shortName": "S.Andreev",
+    "title": "Развитие платежной системы для единого взаимодействия с различными реализациями blockchain",
+    "authorName": "Андреев Сергей Иванович",
+    "advisorName": "ст. преп. Я.А. Кириленко",
+    "consultantName": "ведущий разработчик ПО DSX Technologies, Ф.П. Долголев",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Arkhipov",
+    "title": "Генерация кодов для вещественной арифметики в архитектуре MIPS",
+    "authorName": "Архипов Иван Сергеевич",
+    "advisorName": "д.ф.- м.н., проф. А.Н. Терехов",
+    "consultantName": "none",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Aseeva",
+    "title": "Создание предметно-ориентированного языка для разработки серверного ПО",
+    "authorName": "Асеева Серафима Олеговна",
+    "advisorName": "д.ф.- м.н., проф. А.Н. Терехов",
+    "consultantName": "principal software engineer Dell-EMC Р.С. Ефремов",
+    "sourcesUrl": "https://github.com/manelyset/RAPID",
+    "committerName": ""
+  },
+  {
+    "shortName": "Afanasov",
+    "title": "Реализация асимметричного маркерного процессинга на C66x DSP",
+    "authorName": "Афанасов Артем Константинович",
+    "advisorName": "д.ф.- м.н., проф. А.Н. Терехов",
+    "consultantName": "ст. преп. М.В. Баклановский",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Balashov",
+    "title": "Комплексное исследование эффективности методов программной специализации для графических процессоров",
+    "authorName": "Балашов Илья Вадимович",
+    "advisorName": "к.ф.-м.н., доц. С.В. Григорьев",
+    "consultantName": "инженер-программист ООО 'ИнтеллиДжей Лабс', к.ф.-м.н. Д.А. Березун",
+    "sourcesUrl": "https://github.com/ibalashov24/mix-benchmarks",
+    "committerName": ""
+  },
+  {
+    "shortName": "Belichenko",
+    "title": "Улучшенный алгоритм для решения задачи Maximum Happy Vertices на дереве",
+    "authorName": "Беличенко Дмитрий Алексеевич",
+    "advisorName": "Сагунов Д.Г.",
+    "consultantName": "none",
+    "sourcesUrl": "https://github.com/mitterr/MHV-algos/",
+    "committerName": ""
+  },
+  {
+    "shortName": "Borodkin",
+    "title": "Проектирование и разработка мобильного приложения для портфельного менеджмента на платформе Android",
+    "authorName": "Бородкин Вячеслав Павлович",
+    "advisorName": "ст. преп. Я.А. Кириленко",
+    "consultantName": "ведущий разработчик ПО DSX Technologies, Ф.П. Долголев",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Gudanova",
+    "title": "Система распознавания меток игроков в робофутболе",
+    "authorName": "Гуданова Варвара Сергеевна",
+    "advisorName": "ст. преп. А. А. Пименов",
+    "consultantName": "none",
+    "sourcesUrl": "https://github.com/nameShuffle/ssl-vision",
+    "committerName": ""
+  },
+  {
+    "shortName": "Zhereb",
+    "title": "Реализация алгоритмов RAID-вычислений для процессора ARM",
+    "authorName": "Жереб Вера Вадимовна",
+    "advisorName": "д.ф.- м.н., проф. А.Н. Терехов",
+    "consultantName": "Руководитель Исследовательской Лаборатории RAIDIX",
+    "sourcesUrl": "руководитель исследовательской лаборатории RAIDIX А.В. Маров",
+    "committerName": ""
+  },
+  {
+    "shortName": "Ivasheva",
+    "title": "Реализация веб-редактора правил системы «Умный дом»",
+    "authorName": "Ивашева Валерия Михайловна",
+    "advisorName": "к.т.н., доц. Ю.В. Литвинов",
+    "consultantName": "none",
+    "sourcesUrl": "https://github.com/REAL-NET/Shelter5",
+    "committerName": "valeria-ivasheva"
+  },
+  {
+    "shortName": "Epelbaum",
+    "title": "Поиск путей в графовых базах данных через тензорное произведение",
+    "authorName": "Илья Владимирович Эпельбаум",
+    "advisorName": "к.ф.-м.н., доц. С.В. Григорьев",
+    "consultantName": "none",
+    "sourcesUrl": "https://github.com/IlyaEp/RedisGraph/tree/IlyaEp_tensor",
+    "committerName": ""
+  },
+  {
+    "shortName": "Kamkova",
+    "title": "Симулятор Робофутбола",
+    "authorName": "Камкова Екатерина Александровна",
+    "advisorName": "ст. преп. А.А. Пименов",
+    "consultantName": "none",
+    "sourcesUrl": "https://github.com/katerina-kamkova/7MSim",
+    "committerName": ""
+  },
+  {
+    "shortName": "Kholodaeva",
+    "title": "Разработка приложения для безопасного хранения криптовалют",
+    "authorName": "Холодаева Екатерина Владимировна",
+    "advisorName": "ст. преп. Я.А. Кириленко",
+    "consultantName": "ведущий разработчик ПО DSX Technologies, Ф.П. Долголев",
+    "sourcesUrl": "https://github.com/dsx-tech/CryptoSafekeeping",
+    "committerName": "HolodaevaEkaterina"
+  },
+  {
+    "shortName": "Kidyankin",
+    "title": "Микросервисная архитектура DSM-платформы REAL.NET Web",
+    "authorName": "Кидянкин Михаил Владимирович",
+    "advisorName": "доц. каф. СП, к.т.н. Ю.В. Литвинов",
+    "consultantName": "none",
+    "sourcesUrl": "https://github.com/REAL-NET/web-editor-backend",
+    "committerName": "mikekidya"
+  },
+  {
+    "shortName": "Koekin",
+    "title": "Interactive в IDE Rider F#",
+    "authorName": "Коекин Ярослав Алексеевич",
+    "advisorName": "ст. преп. Я.А. Кириленко",
+    "consultantName": "программист-инженер JetBrains Е.П. Аудучинок",
+    "sourcesUrl": "https://github.com/yarkoe/fsharp-support",
+    "committerName": ""
+  },
+  {
+    "shortName": "Maksimenko",
+    "title": "Разработка серверного программного обеспечения для управления системами хранения данных",
+    "authorName": "Максименко Дмитрий Сергеевич",
+    "advisorName": "д.ф.- м.н., проф. А.Н. Терехов",
+    "consultantName": "principal software engineer Dell-EMC Р.С. Ефремов",
+    "sourcesUrl": "https://github.com/Dmitree-Max/NAS_emulator",
+    "committerName": ""
+  },
+  {
+    "shortName": "Savelyev",
+    "title": "Разработка системы обнаружения внутричерепного кровоизлияния на основе библиотеки MIRF",
+    "authorName": "Савельев Александр Геннадьевич",
+    "advisorName": "к.т.н., доц. Ю.В. Литвинов",
+    "consultantName": "инженер-программист ООО «Технологический Центр Дойче Банка» А.В. Ломакин",
+    "sourcesUrl": "https://github.com/a1arick/MIRF2",
+    "committerName": ""
+  },
+  {
+    "shortName": "Senyukov",
+    "title": "Реализация вероятностного алгоритма вычислительной топологии",
+    "authorName": "Сенюков Леонид Владимирович",
+    "advisorName": "д.ф.- м.н., проф. А.Н. Терехов",
+    "consultantName": "Dr. Rer. Nat. Федоров Л. А.",
+    "sourcesUrl": "https://github.com/leoneed03/SamplingLandscape",
+    "committerName": ""
+  },
+  {
+    "shortName": "Zhilkin",
+    "title": "Анализ решений задачи детекции лиц на изображениях в сфере киберкриминалистики",
+    "authorName": "Федор Игоревич Жилкин",
+    "advisorName": "к.т.н., доц. Ю.В. Литвинов",
+    "consultantName": "разработчик ПО, ООО “Белкасофт” М.В. Виноградов",
+    "sourcesUrl": "https://github.com/Feodoros/BelkaFaces",
+    "committerName": ""
+  },
+  {
+    "shortName": "Ferents",
+    "title": "Проектирование и разработка приложения для портфельного менеджмента на платформе iOS",
+    "authorName": "Ференц Данила Святославович",
+    "advisorName": "ст. преп. Я.А. Кириленко",
+    "consultantName": "Ф. П. Долголев",
+    "sourcesUrl": "https://github.com/dsx-tech/student-project-balances-ios",
+    "committerName": "danilaferents"
+  },
+  {
+    "shortName": "Shvyrkova",
+    "title": "Диагностика сердечно-сосудистых заболеваний по ЭКГ на библиотеке MIRF",
+    "authorName": "Швыркова Александра Алексеевна",
+    "advisorName": "к.т.н., доц. Ю.В. Литвинов",
+    "consultantName": "инженер-программист ООО «Технологический Центр Дойче Банка» А.В. Ломакин",
+    "sourcesUrl": "https://github.com/alexeevna/MIRF2/tree/ashvyrkova",
+    "committerName": ""
+  }
+]

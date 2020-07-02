@@ -8,7 +8,10 @@ module FilesProcessor =
     let fill dir (knowledgeBase: KnowledgeBase) =
         let files = Directory.GetFiles dir
         files 
-        |> Seq.choose DocumentNameParser.parse
-        |> Seq.iter knowledgeBase.Add
+        |> Seq.map DocumentNameParser.parse
+        |> Seq.iter (function 
+                     | Choice1Of2 document -> knowledgeBase.Add document
+                     | Choice2Of2 fileName -> knowledgeBase.AddUnknownFile fileName
+                    )
 
         knowledgeBase

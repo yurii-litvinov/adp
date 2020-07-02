@@ -16,25 +16,23 @@ module HtmlGenerator =
     /// Selects appropriate template to be used for this knowledge base. Assumes that all works in this base are
     /// of the same academic course.
     let private selectTemplate (knowledgeBase: KnowledgeBase) =
-        if Seq.isEmpty knowledgeBase.AllWorks then
-            (Seq.head templates).Value
-        else
-            let course = knowledgeBase.Course 
-            if not <| templates.ContainsKey course then
-                failwith "No template for these works defined"
+        let course = knowledgeBase.Course
+        if not <| templates.ContainsKey course then
+            failwith "No template for these works defined"
 
-            templates.[course]
+        templates.[course]
 
     /// Generates html page with qualification works according to a template
     let generate (knowledgeBase: KnowledgeBase) =
-        let engine = RazorLightEngineBuilder()
-                        .UseFilesystemProject(AppDomain.CurrentDomain.BaseDirectory)
-                        .UseMemoryCachingProvider()
-                        .Build()
+        if not knowledgeBase.FirstPass then
+            let engine = RazorLightEngineBuilder()
+                            .UseFilesystemProject(AppDomain.CurrentDomain.BaseDirectory)
+                            .UseMemoryCachingProvider()
+                            .Build()
 
-        let template = selectTemplate knowledgeBase
+            let template = selectTemplate knowledgeBase
 
-        let result = engine.CompileRenderAsync(template, knowledgeBase).Result
-        let result = result.Trim()
-        File.WriteAllText("out.html", result)
+            let result = engine.CompileRenderAsync(template, knowledgeBase).Result
+            let result = result.Trim()
+            File.WriteAllText("out.html", result)
         knowledgeBase

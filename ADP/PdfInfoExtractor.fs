@@ -10,7 +10,7 @@ module PdfInfoExtractor =
     let private programs = [
         "Кафедра системного программирования";
         "Кафедра cистемного программирования";  // That's not the same string. Unicode is kind of insane.
-        "Системное программирование";
+        ".?Системное программирование.?";
         "Информационные системы и базы данных";
         "Кафедра информатики";
         "Программная инженерия";
@@ -76,6 +76,15 @@ module PdfInfoExtractor =
         else
             let name = advisorMatch.Groups.["Advisor"].Value
             diploma.AdvisorName <- name
+
+        let consultantPattern = @"Консультант.*\n(?<Consultant>.*)\n"
+        let consultantRegex = Regex(consultantPattern, RegexOptions.IgnoreCase)
+        let consultantMatch = consultantRegex.Match text
+        if not consultantMatch.Success then
+            ()
+        else
+            let name = consultantMatch.Groups.["Consultant"].Value
+            diploma.ConsultantName <- name
 
     /// Checks that given diploma has PDF document with report and then tries to extract information from it.
     let private extractForDiploma (diploma: Diploma) =

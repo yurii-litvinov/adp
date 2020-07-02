@@ -6,7 +6,18 @@ open System.Collections.Generic
 type KnowledgeBase() = 
     let works = Dictionary<string, Diploma>()
 
+    /// A list of files that are failed to match any of known types of documents, used for error reporting.
+    let mutable unknownFiles = []
+
+    /// Represents a path to a qualification work on a server, used in .cshtml templates.
     member val FolderOnServer = "" with get, set
+
+    /// Represents state of diploma processor. True if it is a first pass and knowledge base was just generated,
+    /// false if this is a second pass after manual editing and we are ready to generate HTML.
+    member val FirstPass = true with get, set
+
+    /// Academic course of all works in this base. Determines used template, must be set manually in generated config.
+    member val Course = 2 with get, set
     
     /// Adds given document to a repository creating new Diploma record if needed, or adds a new document 
     /// to an existing one.
@@ -21,21 +32,17 @@ type KnowledgeBase() =
             works.[author] <- diploma
         ()
 
+    /// Adds a file not recognized by document name parser for error reporting.
+    member this.AddUnknownFile (fileName: string) =
+       if not (fileName.EndsWith ".json") && not (fileName.EndsWith "out.html") then
+           unknownFiles <- fileName :: unknownFiles
+
+    /// Returns a collection of files not recognized by document name parser, for error reporting.
+    member this.UnknownFiles =
+        unknownFiles |> List.toSeq
+
     /// Returns all existing Diploma records.
     member this.AllWorks = (works.Values :> Diploma seq) |> Seq.sortBy (fun d -> d.AuthorName)
-
-    /// Returns academic course of all the works in a base. If there are different courses, throws an exception.
-    member this.Course = 
-        works.Values
-            |> Seq.fold
-                (fun course (work: Diploma) -> 
-                    if course = 0 then
-                        work.Course
-                    elif course <> work.Course then
-                        failwith "There are works from different courses in a folder"
-                    else
-                        course)
-                0
 
     /// Merges data from a given record into a database, marking record as manually edited. If there was no such
     /// record, given record is simply added to a database.

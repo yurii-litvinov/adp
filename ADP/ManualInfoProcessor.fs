@@ -66,7 +66,11 @@ module ManualInfoProcessor =
                 Title = diploma.Title
                 AuthorName = diploma.AuthorName
                 AdvisorName = diploma.AdvisorName
-                ConsultantName = diploma.ConsultantName
+                ConsultantName = 
+                    if diploma.HasConsultantReview || diploma.HasConsultantNameSet then 
+                        diploma.ConsultantName 
+                    else 
+                        "none"
                 SourcesUrl = diploma.SourcesUrl
                 CommitterName = diploma.CommitterName
             }

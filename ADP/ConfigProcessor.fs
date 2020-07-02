@@ -14,40 +14,44 @@ module ConfigProcessor =
 
     /// Helper record for serialization-deserialization into JSON using Chiron library.
     type ConfigJson = 
-        { FolderOnServer: string }
+        { FolderOnServer: string;
+          Course: int }
 
         /// Serializes record into JSON object.
         static member ToJson (x: ConfigJson) =
             Json.Encode.buildWith (fun x jObj ->
                                    jObj
                                    |> Json.Encode.required "folderOnServer" x.FolderOnServer
+                                   |> Json.Encode.required "course" x.Course
                                   ) x
 
         /// Deserializes record from JSON object.
         static member FromJson (_: ConfigJson) =
                 let inner =
-                    (fun folder -> { FolderOnServer = folder })
+                    (fun folder course -> 
+                        { 
+                            FolderOnServer = folder;
+                            Course = course
+                            }
+                    )
                     <!> Json.Decode.required "folderOnServer"
+                    <*> Json.Decode.required "course"
                 Json.Decode.jsonObject >=> inner
-
-    /// List of default server folders by academic course relative to most common position of generated index document.
-    let private defaultFolders = Map.ofList [
-                                     2, "YearlyProjects/spring-2018/244/";
-                                     3, "344";
-                                     4, "bmo"
-                                 ]
 
     /// Generates new config  file with default settings to be edited manually, if no file exists already.
     let generate (knowledgeBase: KnowledgeBase) = 
         if not <| File.Exists file then
-            let defaultFolder = 
-                if knowledgeBase.AllWorks |> Seq.isEmpty then
-                    defaultFolders |> Seq.head |> fun v -> v.Value
-                else
-                    defaultFolders.[knowledgeBase.Course]
-            Json.encode { FolderOnServer = defaultFolder }
+            let defaultFolder = "YearlyProjects/spring-2018/244/"
+            Json.encode { 
+                  FolderOnServer = defaultFolder 
+                  Course = 2
+                }
             |> Json.formatWith JsonFormattingOptions.Pretty
             |> fun s -> File.WriteAllText(file, s)
+
+            knowledgeBase.FirstPass <- true
+        else
+            knowledgeBase.FirstPass <- false
 
         knowledgeBase
 
@@ -60,7 +64,9 @@ module ConfigProcessor =
             | JFail reason -> failwith <| "Invalid config JSON file" + reason.ToString ()
             | JPass config ->
                 match Json.decode config with
-                | JPass config -> knowledgeBase.FolderOnServer <- config.FolderOnServer
+                | JPass config -> 
+                    knowledgeBase.FolderOnServer <- config.FolderOnServer
+                    knowledgeBase.Course <- config.Course
                 | _ -> failwith "Invalid config JSON file contents"
 
         knowledgeBase

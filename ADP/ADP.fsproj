@@ -35,6 +35,7 @@
     <Compile Include="ManualInfoProcessor.fs" />
     <Compile Include="AdvisorsInfoProcessor.fs" />
     <Compile Include="ConfigProcessor.fs" />
+    <Compile Include="DiagnosticsPrinter.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 

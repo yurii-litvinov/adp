@@ -1,0 +1,236 @@
+[
+  {
+    "shortName": "Anikin",
+    "title": "Реализация расширенного препроцессора для проекта РуСи",
+    "authorName": "Аникин Егор Георгиевич",
+    "advisorName": "д.ф.- м.н., проф. А.Н. Терехов",
+    "consultantName": "none",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Berezhnykh",
+    "title": "Изолированный запуск поставщиков типов для компилятора F#",
+    "authorName": "Бережных Алексей Владимирович",
+    "advisorName": "к.т.н., доц. Ю.В. Литвинов",
+    "consultantName": "инженер-программист JetBrains Е.П. Аудучинок",
+    "sourcesUrl": "https://github.com/DedSec256/fsharp",
+    "committerName": ""
+  },
+  {
+    "shortName": "Vlasova",
+    "title": "Реализация алгоритма поиска путей с контекстно-свободными ограничениями для графовой базы данных Neo4j",
+    "authorName": "Власова Анна Сергеевна",
+    "advisorName": "к.ф.-м.н., доц. С.В. Григорьев",
+    "consultantName": "none",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Galkovsky",
+    "title": "Автономная 3D навигация",
+    "authorName": "Гальковский Антон Денисович",
+    "advisorName": "д.ф.- м.н., проф. А.Н. Терехов",
+    "consultantName": "ст.преп. А.А. Пименов",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Dobryakov",
+    "title": "Разработка системы создания курсов адаптивного обучения",
+    "authorName": "Добряков Дмитрий Алексеевич",
+    "advisorName": "д.ф.- м.н., проф. А.Н. Терехов",
+    "consultantName": "ст. преп. каф. СП М.Х. Немешев ",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Zainullin",
+    "title": "Реализация образовательной среды программирования исполнителей на основе платформы REAL.NET",
+    "authorName": "Зайнуллин Егор Евгеньевич",
+    "advisorName": "к.т.н., доц. Ю.В. Литвинов",
+    "consultantName": "none",
+    "sourcesUrl": "https://github.com/yurii-litvinov/REAL.NET",
+    "committerName": "egorzainullin"
+  },
+  {
+    "shortName": "Kizhnerov",
+    "title": "Разработка программного обеспечения для контроллера ЙоТик v2.0",
+    "authorName": "Кижнеров Павел Александрович",
+    "advisorName": "д.ф.- м.н., проф. А.Н. Терехов",
+    "consultantName": "none",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Kleshin",
+    "title": "Разработка алгоритмов скаффолдинга при помощи дополнительной геномной информации",
+    "authorName": "Клещин Антон Сергеевич",
+    "advisorName": "к.т.н., доц. Ю.В. Литвинов",
+    "consultantName": "доц. каф. СМ, к.ф.-м.н. А.И. Коробейников",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Lavrov",
+    "title": "Проектирование и разработка платформы для портфельного менеджмента",
+    "authorName": "Лавров Владимир Александрович",
+    "advisorName": "доц. каф. СП, к.ф.-м.н. К.Ю. Романовский",
+    "consultantName": "none",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Ledeneva",
+    "title": "Сравнительный анализ алгоритмов вычисления текстовых метрик для документации программного обеспечения",
+    "authorName": "Леденева Екатерина Юрьевна",
+    "advisorName": "д.т.н., проф. Д.В. Кознов",
+    "consultantName": "none",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Luchinskiy",
+    "title": "Разработка системы распознавания городских объектов",
+    "authorName": "Лучинский Владимир Дмитриевич",
+    "advisorName": "к.т.н., доц. Ю.В. Литвинов",
+    "consultantName": "руководитель проектов ООО «Системы компьютерного зрения» Н.А. Пенкрат",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Lyulina",
+    "title": "Система анализа поведения студентов при обучении программированию",
+    "authorName": "Люлина Елена Сергеевна",
+    "advisorName": "к.т.н., доцент Т.А. Брыксин",
+    "consultantName": "none",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Miroshnichenko",
+    "title": "Реализация алгоритма генерации изображений по сигналам головного мозга",
+    "authorName": "Мирошниченко Егор Дмитриевич",
+    "advisorName": "д.ф.- м.н., проф. А.Н. Терехов",
+    "consultantName": "ст.преп. каф. СП А.Р.Ханов",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Nozhkin",
+    "title": "Разработка профайлера для процессоров ARC",
+    "authorName": "Ножкин Илья Игоревич",
+    "advisorName": "д.ф.- м.н., проф. А.Н. Терехов",
+    "consultantName": "none",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Ponomareva",
+    "title": "Реконструкция нежёстких моделей людей в реальном времени по RGB-D видео",
+    "authorName": "Пономарёва Наталья Александровна",
+    "advisorName": "к.т.н., доц. Ю.В. Литвинов",
+    "consultantName": "Д.А. Корчёмкин",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Smirnov",
+    "title": "Разработка криптовалютного шлюза",
+    "authorName": "Смирнов Денис Павлович",
+    "advisorName": "доц. каф. СП, к.ф.-м.н. К.Ю. Романовский",
+    "consultantName": "ст. преп. каф. СП Я.А. Кириленко",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Sokolvyak",
+    "title": "Предметно-ориентированные аннотации для типов в Java",
+    "authorName": "Сокольвяк Сергей Дмитриевич",
+    "advisorName": "доц. каф. СП, к.ф.-м.н. К.Ю. Романовский",
+    "consultantName": "ст. преп. каф. СП Я.А. Кириленко",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Solovev",
+    "title": "Визуализация осуществлённых рефакторингов в IDE на основе IntelliJ Platform",
+    "authorName": "Соловьев Александр Александрович",
+    "advisorName": "к.т.н., доцент Т.А. Брыксин",
+    "consultantName": "none",
+    "sourcesUrl": "https://github.com/Alexander-Solovyov/IdeaRefDiff",
+    "committerName": ""
+  },
+  {
+    "shortName": "Arseniy.Terekhov",
+    "title": "Разработка матричного алгоритма поиска путей с контекстно-свободными ограничениями для RedisGraph",
+    "authorName": "Терехов Арсений Константинович",
+    "advisorName": "к.ф.-м.н., доц. С.В. Григорьев",
+    "consultantName": "none",
+    "sourcesUrl": "https://github.com/YaccConstructor/RedisGraph/tree/path_patterns",
+    "committerName": "simpletonDL"
+  },
+  {
+    "shortName": "Mikhail.Terekhov",
+    "title": "Визуальная одометрия для систем широкоугольных камер с (не-)пересекающимися областями зрения",
+    "authorName": "Терехов Михаил Андреевич",
+    "advisorName": "к.т.н., доц. Ю.В. Литвинов",
+    "consultantName": "программист ООО 'СКЗ' Д.А. Корчёмкин",
+    "sourcesUrl": "https://github.com/MikhailTerekhov/mdso",
+    "committerName": ""
+  },
+  {
+    "shortName": "Tuchina",
+    "title": "Система оценки качества инструментов автодополнения кода в IntelliJ IDEA",
+    "authorName": "Тучина Анастасия Игоревна",
+    "advisorName": "к.т.н., доцент Т.А. Брыксин",
+    "consultantName": "none",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Fadeev",
+    "title": "Интеграция языка РуСи в робоконструкторы",
+    "authorName": "Фадеев Виктор Юрьевич",
+    "advisorName": "д.ф.- м.н., проф. А.Н. Терехов",
+    "consultantName": "none",
+    "sourcesUrl": "https://github.com/andrey-terekhov/RuC",
+    "committerName": "Victor-Y-Fadeev"
+  },
+  {
+    "shortName": "Fefelov",
+    "title": "Архитектура фреймворка MIRF",
+    "authorName": "Фефелов Алексей Андреевич",
+    "advisorName": "к.т.н., доц. Ю.В. Литвинов",
+    "consultantName": "none",
+    "sourcesUrl": "https://github.com/alexeevna/MIRF2/tree/alexf",
+    "committerName": "fefaleksey"
+  },
+  {
+    "shortName": "Shamrai",
+    "title": "Реализация алгоритма построения представления группы по машине Тьюринга",
+    "authorName": "Шамрай Максим Борисович",
+    "advisorName": "к.ф.-м.н., доц. С.В. Григорьев",
+    "consultantName": "none",
+    "sourcesUrl": "https://github.com/YaccConstructor/LangToGroup",
+    "committerName": "MaxVortman"
+  },
+  {
+    "shortName": "Shitov",
+    "title": "Анализ и генерация байт-кода языка Python",
+    "authorName": "Шитов Егор Александрович",
+    "advisorName": "д.ф.- м.н., проф. А.Н. Терехов",
+    "consultantName": "ст. преп. каф. СП М.В. Баклановский",
+    "sourcesUrl": "",
+    "committerName": ""
+  },
+  {
+    "shortName": "Yarkov",
+    "title": "Поддержка языка описания модулей в GoLand",
+    "authorName": "Ярков Иван Сергеевич",
+    "advisorName": "к.ф.-м.н., доц. С.В. Григорьев",
+    "consultantName": "ст. преп. каф. СП Я.А. Кириленко",
+    "sourcesUrl": "",
+    "committerName": ""
+  }
+]
